@@ -9,9 +9,12 @@ export default class FormComponent extends React.Component {
     this.state = {
       modalVisible : false,
       modalData : [],
-      fromStation : ""
+      whichModal : "",
+      fromStation : "",
+      toStation:""
     }
     this.onPress = this.onPress.bind(this);
+    this.setStation = this.setStation.bind(this);
   }
 
   onPress(e){
@@ -26,7 +29,8 @@ export default class FormComponent extends React.Component {
         {
           text : 'Some2',
           value : 'sm2'
-        }]
+        }],
+        whichModal : "from"
       })
     }
     else {
@@ -38,12 +42,17 @@ export default class FormComponent extends React.Component {
         {
           text : 'to2',
           value : 'sm2'
-        }]
+        }],
+        whichModal : "to"
       })
     }
     this.setState({
       modalVisible : true
     })
+  }
+
+  setStation(stationId){
+    console.log("Form Component" + stationId);
   }
 
   render() {
@@ -54,56 +63,82 @@ export default class FormComponent extends React.Component {
         <View style={{width: Dimensions.get('window').width, height:Dimensions.get('window').height, backgroundColor: 'powderblue'}} >
           <View style={{padding:40}}>
             <Text>Hello</Text>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={()=>this.onPress('to')}
-              name="from"
-            >
-              <Text> {this.state.fromStation==""?"Touch Here":this.state.fromStation} </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={()=>this.onPress('to')}
-              name="to"
-            >
-              <Text> {this.state.fromStation==""?"Touch Here":this.state.fromStation} </Text>
-            </TouchableOpacity>
+            <View style={{padding:40}}>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={()=>this.onPress('from')}
+                name="from"
+              >
+                <Text> {this.state.fromStation==""?"Touch Here":this.state.fromStation} </Text>
+              </TouchableOpacity>
+            </View>
+            <View style={{padding:40}}>
+              <TouchableOpacity
+                style={styles.button}
+                onPress={()=>this.onPress('to')}
+                name="to"
+              >
+                <Text> {this.state.fromStation==""?"Touch Here":this.state.toStation} </Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-        <Overlay isVisible={this.state.modalVisible}
-        onBackdropPress={() => this.setState({modalVisible: false})}>
-        {    modalData.map((data,id)=>{
-              return (
-                <Text key={id}>{data.text}</Text>
-              )
-          })
-        }
-        </Overlay>
+        <OverlayComponent
+        modalVisible={this.state.modalVisible}
+        modalData={this.state.modalData}
+        modalClose={()=>this.setState((prevState)=>({modalVisible:!prevState.modalVisible}))}
+        itemSelected={this.setStation}
+        />
       </View>
     );
   }
 }
 
-class SelectorComponent extends React.Component{
-  constructor()
+class OverlayComponent extends React.Component {
+  constructor(props)
   {
-    super();
-    this.onPress = this.onPress.bind(this);
+    super(props);
+    this.state = {
+      modalVisible : this.props.modalVisible
+    }
+    this.selectedItemReturn = this.selectedItemReturn.bind(this);
   }
 
-
+selectedItemReturn(sid){
+    this.props.modalClose();
+    this.props.itemSelected(sid)
+        console.log("Select "+sid);
+  }
 
   render(){
     return (
-      <TouchableOpacity
-        style={styles.button}
-        onPress={this.onPress}
-      >
-        <Text> Touch Here </Text>
+      <Overlay isVisible={this.props.modalVisible}
+      onBackdropPress={() => this.props.modalClose()}>
+      <View style={{padding : 40}}>
+      {    this.props.modalData.map((data,id)=>{
+            return (
+              <TouchableListItem key={id} sid={data.value} text={data.text} selectItem={this.selectedItemReturn}/>
+            )
+        })
+      }
+      </View>
+      </Overlay>
+    );
+  }
+
+}
+
+
+class TouchableListItem extends React.Component {
+  render(){
+    return (
+      <TouchableOpacity style={{backgroundColor:'green',padding:10}} onPress={()=>this.props.selectItem(this.props.sid)}>
+        <Text>{this.props.text}</Text>
       </TouchableOpacity>
-    )
+    );
   }
 }
+
 
 class PickerComponent extends React.Component {
   constructor(props){
