@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View,Dimensions,Picker,TouchableOpacity, ScrollView } from 'react-native';
+import { Alert,StyleSheet, Text, View,Dimensions,Picker,TouchableOpacity, ScrollView } from 'react-native';
 import { Overlay } from 'react-native-elements';
 
 export default class FormComponent extends React.Component {
@@ -30,18 +30,23 @@ export default class FormComponent extends React.Component {
     {
       this.setState({
         modalData : this.state.stationData,
-        whichModal : "from"
+        whichModal : "from",
+        modalVisible : true
       })
     }
     else {
-      this.setState({
-        modalData : this.state.toStations,
-        whichModal : "to"
-      })
+      if(this.state.fromStation==="")
+      {
+        Alert.alert('Select From First','You have to first select the Origin before selecting Destination',[{text: 'Okay', onPress: () => console.log('PressedOkay')}])
+      }
+      else{
+        this.setState({
+          modalData : this.state.toStations,
+          whichModal : "to",
+          modalVisible : true
+        })
+      }
     }
-    this.setState({
-      modalVisible : true
-    })
   }
 
   setStation(stationId){
@@ -49,7 +54,6 @@ export default class FormComponent extends React.Component {
     let theStation = this.getStation(this.state.stationData,stationId);
     if(this.state.whichModal==="from")
     {
-
       let toL = this.setToStations(this.state.stationData,theStation.line_no);
       this.setState({
         fromStation : theStation,
@@ -208,36 +212,6 @@ class TouchableListItem extends React.Component {
       </TouchableOpacity>
     );
   }
-}
-
-
-class PickerComponent extends React.Component {
-  constructor(props){
-    super(props);
-  }
-  render(){
-    return(
-    <Picker
-      selectedValue="java"
-      style={{height: 50}}
-      itemStyle={{ backgroundColor: "grey", color: "blue", fontFamily:"Ebrima", fontSize:17 }}
-      >
-
-  <Picker.Item label="JavaScript" value="js" />
-</Picker>
-);
-  }
-}
-
-PickerComponent.defaultProps = {
-  pickerData : [{
-    text:"Default Data",
-    value : "default"
-  },
-  {
-    text:"Default Data",
-    value : "default"
-  }]
 }
 
 
