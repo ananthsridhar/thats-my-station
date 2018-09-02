@@ -11,10 +11,17 @@ export default class FormComponent extends React.Component {
       modalData : [],
       whichModal : "",
       fromStation : "",
-      toStation:""
+      toStation:"",
+      stationData : "",
+      fromStationList : "",
+      toStationList : ""
     }
     this.onPress = this.onPress.bind(this);
     this.setStation = this.setStation.bind(this);
+  }
+
+  componentDidMount(){
+    this.getAllData();
   }
 
   onPress(e){
@@ -22,27 +29,13 @@ export default class FormComponent extends React.Component {
     if(e==="from")
     {
       this.setState({
-        modalData : [{
-          text : 'Some1',
-          value : 'sm1'
-        },
-        {
-          text : 'Some2',
-          value : 'sm2'
-        }],
+        modalData : this.state.stationData,
         whichModal : "from"
       })
     }
     else {
       this.setState({
-        modalData : [{
-          text : 'to1w',
-          value : 'sm1'
-        },
-        {
-          text : 'to2',
-          value : 'sm2'
-        }],
+        modalData : this.state.toStations,
         whichModal : "to"
       })
     }
@@ -53,6 +46,22 @@ export default class FormComponent extends React.Component {
 
   setStation(stationId){
     console.log("Form Component" + stationId);
+    let theStation = this.getStation(this.state.stationData,stationId);
+    if(this.state.whichModal==="from")
+    {
+
+      let toL = this.setToStations(this.state.stationData,theStation.line_no);
+      this.setState({
+        fromStation : theStation,
+        toStation : "",
+        toStations : toL
+      })
+    }
+    else {
+        this.setState({
+          toStation : theStation
+        })
+      }
   }
 
   render() {
@@ -69,7 +78,7 @@ export default class FormComponent extends React.Component {
                 onPress={()=>this.onPress('from')}
                 name="from"
               >
-                <Text> {this.state.fromStation==""?"Touch Here":this.state.fromStation} </Text>
+                <Text> {this.state.fromStation==""?"Touch Here":this.state.fromStation.station_name} </Text>
               </TouchableOpacity>
             </View>
             <View style={{padding:40}}>
@@ -78,7 +87,7 @@ export default class FormComponent extends React.Component {
                 onPress={()=>this.onPress('to')}
                 name="to"
               >
-                <Text> {this.state.fromStation==""?"Touch Here":this.state.toStation} </Text>
+                <Text> {this.state.toStation==""?"Touch Here":this.state.toStation.station_name} </Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -92,6 +101,66 @@ export default class FormComponent extends React.Component {
       </View>
     );
   }
+
+
+/*Utility functions to retrieve station data*/
+
+
+getAllData() {
+    var fromDd = [];
+    console.log("Called Station Data Retrieval");
+    fetch("https://my.api.mockaroo.com/station_data.json?key=41b13700")
+      .then(results => {
+        //console.log(results.json())
+        return results.json();
+      })
+      .then(data => {
+        //console.log(data);
+        this.setState({
+          stationData: data,
+          fromStations : data
+        });
+        // data.map((station, id) => {
+        //   //console.log(station.station_name);
+        //   fromDd.push(
+        //     <option value={station.id} key={id}>
+        //       {station.station_name} {station.line_no}
+        //     </option>
+        //   );
+        // });
+      });
+  }
+
+  getStation(stationData, station_id) {
+    let fromStation = "";
+    for (let i = 0; i < stationData.length; i++) {
+      if (stationData[i].id == station_id) {
+        fromStation = stationData[i];
+        return fromStation;
+      }
+    }
+  }
+
+  setToStations(stationData, line_no) {
+    let toDd = [];
+    stationData.map((station, id) => {
+      if (station.line_no == line_no) {
+        toDd.push(
+          station
+        );
+      }
+    });
+    return toDd;
+  }
+
+
+
+
+/*End Utility functions*/
+
+
+
+
 }
 
 class OverlayComponent extends React.Component {
@@ -118,37 +187,7 @@ selectedItemReturn(sid){
           <ScrollView>
             {    this.props.modalData.map((data,id)=>{
                   return (
-                    <TouchableListItem key={id} sid={data.value} text={data.text} selectItem={this.selectedItemReturn}/>
-                  )
-              })
-            }
-            {    this.props.modalData.map((data,id)=>{
-                  return (
-                    <TouchableListItem key={id} sid={data.value} text={data.text} selectItem={this.selectedItemReturn}/>
-                  )
-              })
-            }
-            {    this.props.modalData.map((data,id)=>{
-                  return (
-                    <TouchableListItem key={id} sid={data.value} text={data.text} selectItem={this.selectedItemReturn}/>
-                  )
-              })
-            }
-            {    this.props.modalData.map((data,id)=>{
-                  return (
-                    <TouchableListItem key={id} sid={data.value} text={data.text} selectItem={this.selectedItemReturn}/>
-                  )
-              })
-            }
-            {    this.props.modalData.map((data,id)=>{
-                  return (
-                    <TouchableListItem key={id} sid={data.value} text={data.text} selectItem={this.selectedItemReturn}/>
-                  )
-              })
-            }
-            {    this.props.modalData.map((data,id)=>{
-                  return (
-                    <TouchableListItem key={id} sid={data.value} text={data.text} selectItem={this.selectedItemReturn}/>
+                    <TouchableListItem key={id} sid={data.id} text={data.station_name} selectItem={this.selectedItemReturn}/>
                   )
               })
             }
