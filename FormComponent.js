@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View,Dimensions,Picker,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View,Dimensions,Picker,TouchableOpacity, ScrollView } from 'react-native';
 import { Overlay } from 'react-native-elements';
 
 export default class FormComponent extends React.Component {
@@ -114,14 +114,46 @@ selectedItemReturn(sid){
     return (
       <Overlay isVisible={this.props.modalVisible}
       onBackdropPress={() => this.props.modalClose()}>
-      <View style={{padding : 40}}>
-      {    this.props.modalData.map((data,id)=>{
-            return (
-              <TouchableListItem key={id} sid={data.value} text={data.text} selectItem={this.selectedItemReturn}/>
-            )
-        })
-      }
-      </View>
+        <View style={{padding : 40,backgroundColor:'yellow',height:400}}>
+          <ScrollView>
+            {    this.props.modalData.map((data,id)=>{
+                  return (
+                    <TouchableListItem key={id} sid={data.value} text={data.text} selectItem={this.selectedItemReturn}/>
+                  )
+              })
+            }
+            {    this.props.modalData.map((data,id)=>{
+                  return (
+                    <TouchableListItem key={id} sid={data.value} text={data.text} selectItem={this.selectedItemReturn}/>
+                  )
+              })
+            }
+            {    this.props.modalData.map((data,id)=>{
+                  return (
+                    <TouchableListItem key={id} sid={data.value} text={data.text} selectItem={this.selectedItemReturn}/>
+                  )
+              })
+            }
+            {    this.props.modalData.map((data,id)=>{
+                  return (
+                    <TouchableListItem key={id} sid={data.value} text={data.text} selectItem={this.selectedItemReturn}/>
+                  )
+              })
+            }
+            {    this.props.modalData.map((data,id)=>{
+                  return (
+                    <TouchableListItem key={id} sid={data.value} text={data.text} selectItem={this.selectedItemReturn}/>
+                  )
+              })
+            }
+            {    this.props.modalData.map((data,id)=>{
+                  return (
+                    <TouchableListItem key={id} sid={data.value} text={data.text} selectItem={this.selectedItemReturn}/>
+                  )
+              })
+            }
+          </ScrollView>
+        </View>
       </Overlay>
     );
   }
