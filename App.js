@@ -1,29 +1,24 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import FormComponent from './FormComponent.js';
+import DetailComponent from './DetailScreen.js'
+import {createStackNavigator} from 'react-navigation';
 
 export default class App extends React.Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <MainContainer/>
-        </View>
-    );
+    return <RootStack/>
   }
 }
 
-class MainContainer extends React.Component {
-   render(){
-     return (
-       <View style={{flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',}}>
-        <FormComponent/>
-     </View>
-     )
-   }
-}
+const RootStack = createStackNavigator(
+  {
+  Home: FormComponent,
+  Details: DetailComponent,
+  },
+  {
+    headerMode: 'none'
+  }
+);
 
 const styles = StyleSheet.create({
   container: {

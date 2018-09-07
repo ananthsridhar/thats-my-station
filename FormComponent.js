@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert,StyleSheet, Text, View,Dimensions,Picker,TouchableOpacity, ScrollView } from 'react-native';
+import { Alert,Button,StyleSheet, Text, View,Dimensions,Picker,TouchableOpacity, ScrollView } from 'react-native';
 import { Icon ,Overlay } from 'react-native-elements';
 
 import station_data from './resources/stationData.json'
@@ -20,6 +20,7 @@ export default class FormComponent extends React.Component {
     }
     this.onPress = this.onPress.bind(this);
     this.setStation = this.setStation.bind(this);
+    this.onPressGo = this.onPressGo.bind(this);
     //console.log(station_data[0].station_name);
   }
 
@@ -72,11 +73,24 @@ export default class FormComponent extends React.Component {
     }
   }
 
+  onPressGo(){
+    if(this.state.fromStation!="" && this.state.toStation!="")
+    {
+      this.props.navigation.navigate('Details',{
+        fromStation : this.state.fromStation,
+        toStation : this.state.toStation,
+      });
+    }
+    else {
+      Alert.alert("Select Stations First");
+    }
+  }
+
   render() {
 
     let modalData = this.state.modalData;
     return (
-      <View>
+      <View style={styles.container}>
         <View style={{width: Dimensions.get('window').width, height:Dimensions.get('window').height, backgroundColor: 'powderblue'}} >
           <View style={{flex:1}}>
             <Text>Hello</Text>
@@ -104,6 +118,11 @@ export default class FormComponent extends React.Component {
             </View>
           </View>
           <View style={{flex:1}}>
+          <Button
+              onPress={this.onPressGo}
+              title="Go"
+              color="#841584"
+              />
           </View>
         </View>
         <OverlayComponent
@@ -215,6 +234,12 @@ class TouchableListItem extends React.Component {
 
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#f43',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   button: {
     alignItems: 'center',
     // backgroundColor: '#DDDDDD',
