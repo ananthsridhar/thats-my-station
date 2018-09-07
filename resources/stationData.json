@@ -1,0 +1,162 @@
+[
+   {
+     "id": 1,
+     "station_name": "Chennai Beach",
+     "line_no":1,
+     "pos_in_line":0,
+     "station_latitude": 13.092253,
+     "station_longitude": 80.292397
+   },
+   {
+     "id": 2,
+     "station_name": "Chennai Beach",
+     "line_no":2,
+     "pos_in_line":0,
+     "station_latitude": 13.092253,
+     "station_longitude": 80.292397
+   },
+   {
+     "id": 3,
+     "station_name": "Chennai Fort",
+     "line_no":1,
+     "pos_in_line":1,
+     "station_latitude": 13.083172,
+     "station_longitude": 80.282674
+   },
+   {
+     "id": 4,
+     "station_name": "Chennai Fort",
+     "line_no":2,
+     "pos_in_line":1,
+     "station_latitude": 13.083172,
+     "station_longitude": 80.282674
+   },
+   {
+     "id": 5,
+     "station_name": "Park Town",
+     "line_no":1,
+     "pos_in_line":2,
+     "station_latitude": 13.079532,
+     "station_longitude": 80.276496
+   },
+   {
+     "id": 6,
+     "station_name": "Chintadripet",
+     "line_no":1,
+     "pos_in_line":3,
+     "station_latitude": 13.073828,
+     "station_longitude": 80.273833
+   },
+   {
+     "id": 7,
+     "station_name": "Chepauk",
+     "line_no":1,
+     "pos_in_line":4,
+     "station_latitude": 13.061907,
+     "station_longitude": 80.280527
+   },
+   {
+     "id": 8,
+     "station_name": "Triplicane",
+     "line_no":1,
+     "pos_in_line":5,
+     "station_latitude": 13.055248,
+     "station_longitude": 80.280558
+   },
+   {
+     "id": 9,
+     "station_name": "Lighthouse",
+     "line_no":1,
+     "pos_in_line":6,
+     "station_latitude": 13.045077,
+     "station_longitude": 80.276752
+   },
+   {
+     "id": 10,
+     "station_name": "MundakanniAmman Koil",
+     "line_no":1,
+     "pos_in_line":7,
+     "station_latitude": 13.040551,
+     "station_longitude": 80.269889
+   },
+   {
+     "id":11,
+     "station_name": "Thirumylai",
+     "line_no":1,
+     "pos_in_line":8,
+     "station_latitude": 13.034660,
+     "station_longitude": 80.266988
+   },
+   {
+     "id": 12,
+     "station_name": "Mandaveli",
+     "line_no":1,
+     "pos_in_line":9,
+     "station_latitude": 13.027317,
+     "station_longitude": 80.260965
+   },
+   {
+     "id": 13,
+     "station_name": "Greenways Road",
+     "line_no":1,
+     "pos_in_line":10,
+     "station_latitude": 13.020596,
+     "station_longitude": 80.251917
+   },
+   {
+     "id": 14,
+     "station_name": "Kotturpuram",
+     "line_no":1,
+     "pos_in_line":11,
+     "station_latitude": 13.013725,
+     "station_longitude": 80.248253
+   },
+   {
+     "id": 15,
+     "station_name": "Kasturbai Nagar",
+     "line_no":1,
+     "pos_in_line":12,
+     "station_latitude": 13.005480,
+     "station_longitude": 80.247732
+   },
+   {
+     "id": 16,
+     "station_name": "Indira Nagar",
+     "line_no":1,
+     "pos_in_line":13,
+     "station_latitude": 12.996353,
+     "station_longitude": 80.249555
+   },
+   {
+     "id": 17,
+     "station_name": "Thiruvanmiyur",
+     "line_no":1,
+     "pos_in_line":14,
+     "station_latitude": 12.989427,
+     "station_longitude": 80.251387
+   },
+   {
+     "id": 18,
+     "station_name": "Taramani",
+     "line_no":1,
+     "pos_in_line":15,
+     "station_latitude": 12.978667,
+     "station_longitude": 80.240973
+   },
+   {
+     "id": 19,
+     "station_name": "Perungudi",
+     "line_no":1,
+     "pos_in_line":10,
+     "station_latitude": 12.975453,
+     "station_longitude": 80.231525
+   },
+   {
+     "id": 20,
+     "station_name": "Velachery",
+     "line_no":1,
+     "pos_in_line":10,
+     "station_latitude": 12.967304,
+     "station_longitude": 80.219460
+   }
+]
