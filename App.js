@@ -12,7 +12,7 @@ export default class App extends React.Component {
 
 const RootStack = createStackNavigator(
   {
-  Home: FormComponent,
+  // Home: FormComponent,
   Details: DetailComponent,
   },
   {

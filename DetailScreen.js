@@ -27,8 +27,8 @@ export default class DetailComponent extends React.Component {
             <DisplayField color="white" text={"To "+ destination.station_name} fSize={20} />
         </View>
         <View style={{flex:1,flexDirection:'row',justifyContent:'space-evenly'}}>
-            <DisplayField color="white" text="TimeLeft" fSize={20} />
-            <DisplayField color="white" text="Progress Bar" fSize={20} />
+            <DisplayField color="white" text="11:00" fSize={20} />
+            <ProgressComponent color="blue" progress={80} />
         </View>
       </View>
       <View style={{flex:5,backgroundColor:'blue'}}>
@@ -55,8 +55,23 @@ class DisplayField extends React.Component {
       padding : 10
     };
     return (
-      <View>
+      <View stle={{flex:1}}>
         <Text style={style}>{this.props.text}</Text>
+      </View>
+    );
+  }
+}
+
+class ProgressComponent extends React.Component {
+  render() {
+    const style = {
+      backgroundColor: this.props.color,
+      flex: this.props.progress*0.01,
+      borderRadius:10
+    };
+    return (
+      <View style={{flex:1,flexDirection: 'row', backgroundColor: "white",borderRadius:10 }}>
+        <View style={style} />
       </View>
     );
   }
