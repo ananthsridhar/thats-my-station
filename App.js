@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import FormComponent from './FormComponent.js';
-import DetailComponent from './DetailScreen.js'
+import DetailScreen from './DetailScreen.js'
 import {createStackNavigator} from 'react-navigation';
 
 export default class App extends React.Component {
@@ -13,7 +13,7 @@ export default class App extends React.Component {
 const RootStack = createStackNavigator(
   {
   // Home: FormComponent,
-  Details: DetailComponent,
+  Details: DetailScreen,
   },
   {
     headerMode: 'none'

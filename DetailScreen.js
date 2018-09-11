@@ -4,11 +4,28 @@ import { Icon ,Overlay } from 'react-native-elements';
 
 import station_data from './resources/stationData.json'
 
-export default class DetailComponent extends React.Component {
+export default class DetailScreen extends React.Component {
 
   constructor(){
     super();
 
+  }
+
+  render(){
+    const { navigation } = this.props;
+    const origin = navigation.getParam('fromStation',{station_name:'Unset'});
+    const destination = navigation.getParam('toStation',{station_name:'Unset'})
+    return (
+    <DetailComponent origin={origin} dest={destination}/>
+  );
+  }
+}
+
+
+class DetailComponent extends React.Component {
+
+  constructor(){
+    super();
   }
 
   componentDidMount(){
@@ -16,9 +33,8 @@ export default class DetailComponent extends React.Component {
   }
 
   render() {
-    const { navigation } = this.props;
-    const origin = navigation.getParam('fromStation',{station_name:'Unset'});
-    const destination = navigation.getParam('toStation',{station_name:'Unset'})
+    const origin = this.props.origin;
+    const destination = this.props.dest;
   return(
     <View style={styles.container}>
       <View style={{flex:1}}>
@@ -33,15 +49,13 @@ export default class DetailComponent extends React.Component {
       </View>
       <View style={{flex:5,backgroundColor:'blue'}}>
       </View>
-    </View>
-    );
+    </View>);
+
   }
-
-
-
-/*End Utility functions*/
-
 }
+
+
+
 
 class DisplayField extends React.Component {
   constructor() {
