@@ -1,0 +1,4 @@
+#Wed Sep 12 21:33:28 GMT+05:30 2018
+base.0=D\:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+renamed.0=classes.dex
+file.0=D\:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
