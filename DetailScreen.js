@@ -1,8 +1,7 @@
 import React from 'react';
 import { Alert,Button,StyleSheet, Text, View,Dimensions,Picker,TouchableOpacity, ScrollView } from 'react-native';
 import { Icon ,Overlay } from 'react-native-elements';
-
-import station_data from './resources/stationData.json'
+import MapComponent from './MapComponent.js';
 
 export default class DetailScreen extends React.Component {
 
@@ -16,7 +15,12 @@ export default class DetailScreen extends React.Component {
     const origin = navigation.getParam('fromStation',{station_name:'Unset'});
     const destination = navigation.getParam('toStation',{station_name:'Unset'})
     return (
-    <DetailComponent origin={origin} dest={destination}/>
+        <View style={styles.mainContainer}  >
+            <DetailComponent origin={origin} dest={destination} style={{flex:4,padding:20}}/>
+            <MapComponent />
+      <View style={{flex:1,backgroundColor:'blue'}}>
+      </View>
+          </View>
   );
   }
 }
@@ -38,7 +42,7 @@ class DetailComponent extends React.Component {
   return(
     <View style={styles.container}>
       <View style={{flex:1}}>
-        <View style={{flex:1,flexDirection:'row',justifyContent:'space-evenly'}}>
+        <View style={{flex:1,flexDirection:'row'}}>
             <DisplayField color="white" text={"From " + origin.station_name} fSize={20} />
             <DisplayField color="white" text={"To "+ destination.station_name} fSize={20} />
         </View>
@@ -47,8 +51,7 @@ class DetailComponent extends React.Component {
             <ProgressComponent color="blue" progress={80} />
         </View>
       </View>
-      <View style={{flex:5,backgroundColor:'blue'}}>
-      </View>
+
     </View>);
 
   }
@@ -69,7 +72,7 @@ class DisplayField extends React.Component {
       padding : 10
     };
     return (
-      <View stle={{flex:1}}>
+      <View style={{flex:1,height:50,flexDirection: 'row'}}>
         <Text style={style}>{this.props.text}</Text>
       </View>
     );
@@ -95,9 +98,7 @@ const styles = StyleSheet.create({
   container: {
     paddingTop : 40,
     flex: 1,
-    backgroundColor: '#f43',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#f43'
   },
   button: {
     alignItems: 'center',
@@ -106,5 +107,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderBottomWidth: 2,
     borderBottomColor: '#d6d7da'
+  },
+  mainContainer :{
+    flex:1
   }
 });

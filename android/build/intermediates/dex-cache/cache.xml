@@ -3,66 +3,12 @@
 
     <item
         is-multidex="false"
-        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.0\5871fb60dc68d67da54a663c3fd636a10a532948\jsr305-3.0.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\okhttp-3.6.0_84228d046454c5085ec08115db21f6065dbddaa0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\1.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-1.3.0_10726e99c6f4938d99b206b45df369901b754f5a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_18f205f63e7fc7b8488769979a11ce34a6b87845.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="e31331bdf6b5952badadbfc171f04b95c55d3b16">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.55.4_3c3d158d262c09a387339558edf1570d99a95bf8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\jars\libs\infer-annotations-4.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_d213481d7a20478fc41aed3c2492e7a12110ada2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="6975da39a7040257bd51d21a231b76c915872d38">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_70f0ce36525557d687279cc30ceb8bc83e751a7a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Ananth\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1_e2005fca86268c50a7e26263b753e9561b95a028.jar" />
+        revision="26.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\jsr305-3.0.0_c90f6b0b9bb11995dbab0bb0bb3c1e8a495811e3.jar" />
     </item>
     <item
         is-multidex="false"
@@ -75,57 +21,84 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\jars\classes.jar"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_24bf7dc63244845bc53239bee1e2de0cf86ecffa.jar" />
+        revision="26.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_88e1bd9c93c8843b6719da9bcd3de06cceec3d1a.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\libs\internal_impl-23.0.1.jar"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1_d2926159c5807b74ffe45ad1af5454c9b72f1384.jar" />
+        revision="26.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_18f205f63e7fc7b8488769979a11ce34a6b87845.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.3.0\jars\classes.jar"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\1.3.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.3.0_57f18648d3c3c4e5a7088930522305264bb51ce0.jar" />
+        revision="26.0.1"
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-1.3.0_10726e99c6f4938d99b206b45df369901b754f5a.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.1\jars\classes.jar"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline\1.3.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.0.1_8dfce733cb0255e82499d71558b40d6016ccaa93.jar" />
+        sha1="48c7f54c2515a2312d3a4481d10c43fbb807f3af">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-1.3.0_10726e99c6f4938d99b206b45df369901b754f5a.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\27.0.2\jars\classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_6805a7c1be2290468da659cec05eb3ce40c83afa.jar" />
+        revision="26.0.1"
+        sha1="caa03787689212c10939f308a55a8dc8a3333ed2">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-27.0.2_3f196ffb41cf7ffdd0141091d077e33053d786b0.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.3.0\jars\classes.jar"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-okhttp3\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c03c08c9934b23c8c09c803345ec51a74119127b">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-okhttp3-1.3.0_aaef557200d4eecb383c1af67a4b5877e815cf2d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\27.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="04cd0cacbedcb338f64665b88bad64d145325fbd">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-27.0.2_4a76454c7b4b83f2de89f5949bd0e364c31a6e12.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-1.3.0_37b5465fda562f3fcf1cd78dbd9d65ac3e8be539.jar" />
+        sha1="e31331bdf6b5952badadbfc171f04b95c55d3b16">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.55.4_3c3d158d262c09a387339558edf1570d99a95bf8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fresco\drawee\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-1.3.0_efae2567212b168d44fe1a160d9189967d085533.jar" />
     </item>
     <item
         is-multidex="false"
@@ -138,6 +111,69 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_6805a7c1be2290468da659cec05eb3ce40c83afa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_18f205f63e7fc7b8488769979a11ce34a6b87845.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.mapbox.mapboxsdk\mapbox-android-services\2.2.9\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9adc627fc283339f926c4e10d82a42bc39e0d77f">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.mapbox.mapboxsdk-mapbox-android-services-2.2.9_951bed863b4a3163f62d5ca705d4b289e18c02e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-1.3.0_37b5465fda562f3fcf1cd78dbd9d65ac3e8be539.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.2.0\a09926806199499a20b2f5168779499abfa33342\converter-gson-2.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a09926806199499a20b2f5168779499abfa33342">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\converter-gson-2.2.0_16e03b600509c56a303a1cfcbe8c79bc3a10fff7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.3.0_57f18648d3c3c4e5a7088930522305264bb51ce0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.2.0\41e67dba73c3347e4503761642c39d0e06ca1f2\retrofit-2.2.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="041e67dba73c3347e4503761642c39d0e06ca1f2">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\retrofit-2.2.0_243083d6bea12ff1dd1b42118471ff753eee51e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-okhttp3\1.3.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -147,21 +183,120 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\jars\classes.jar"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.6.0\69edde9fc4b01c9fd51d25b83428837478c27254\okhttp-3.6.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.0.1_1c35686d1f227ec2249484ea234a0dedf9073b0b.jar" />
+        revision="26.0.1"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\okhttp-3.6.0_84228d046454c5085ec08115db21f6065dbddaa0.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.mapbox.mapboxsdk\mapbox-android-plugin-locationlayer\0.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b1cad667a0222bae157d31a08af83400e470a05f">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.mapbox.mapboxsdk-mapbox-android-plugin-locationlayer-0.3.0_70343a762244cb58dd7f405bafbc9c78290b0167.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\gson-2.8.0_42f4b736cb4b85549a98fa495d25cd61c0842a19.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\27.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="ac2ce6027755bcf49442e70597bec0feb9064f68">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-27.0.2_a282c4e7077e606cac5fb5516d857006135ba11c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.android.support\support-compat\27.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="b432e82447a3af781e927b9ba0bbb9fe2a496d4a">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-27.0.2_c2eecec7d555ab3f396e7370af2590f35ea6b33c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.jakewharton.timber\timber\4.6.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c4b2d07f780d8b29d39c0daf1129d544e726cc1b">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.jakewharton.timber-timber-4.6.0_aaafdf97d78a6c509c5983a69082dff1966c6c34.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\jars\libs\infer-annotations-4.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.1"
-        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_88e1bd9c93c8843b6719da9bcd3de06cceec3d1a.jar" />
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_d213481d7a20478fc41aed3c2492e7a12110ada2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e31331bdf6b5952badadbfc171f04b95c55d3b16">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.react-react-native-0.55.4_3c3d158d262c09a387339558edf1570d99a95bf8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp-urlconnection\3.6.0\3f9b16b774f2c36cfd86dd2053d0b3059531dacc\okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.6.0_3131b5346a14b053b19e9b91d8bc435f39964e93.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.facebook.fbui.textlayoutbuilder\staticlayout-proxy\1.0\f162442a19fff13995fbd51ba414d9ee05579080\staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\staticlayout-proxy-1.0_6805a7c1be2290468da659cec05eb3ce40c83afa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\bolts-tasks-1.4.0_47d39af7850b40de08383e2e4104fea88a724a0d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\android.arch.lifecycle\runtime\1.0.3\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d7cc5473b9cf4ea159a263cd477fb3ecb2987b96">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\android.arch.lifecycle-runtime-1.0.3_44ef3ff1fb82851427318d1ea93b393786007f96.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\android.arch.lifecycle\common\1.0.3\7d7f60c4783872861222166f6164215f8951c7b1\common-1.0.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="7d7f60c4783872861222166f6164215f8951c7b1">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\common-1.0.3_40feccd611876a8842f1864aeaf4833bac9545dc.jar" />
     </item>
     <item
         is-multidex="false"
@@ -171,6 +306,60 @@
         revision="23.0.1"
         sha1="c65a2e39d54023bac3aef64a2f0cff89289c7ff6">
         <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-drawee-1.3.0_efae2567212b168d44fe1a160d9189967d085533.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.mapbox.mapboxsdk\mapbox-java-core\2.2.9\c18aa432e1830aba56d861494f131a34a0b8ce69\mapbox-java-core-2.2.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c18aa432e1830aba56d861494f131a34a0b8ce69">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\mapbox-java-core-2.2.9_b5ff425f2ae11d09eabc0fe741d138fc7a8361c0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_24bf7dc63244845bc53239bee1e2de0cf86ecffa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fresco\imagepipeline-base\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="72128af126ddd7d6252da9357fe560d3abcdfb0c">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-imagepipeline-base-1.3.0_57f18648d3c3c4e5a7088930522305264bb51ce0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fbcore\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="37345de2ed2772f385eaeec37a9c2ff0fea99ad7">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fbcore-1.3.0_37b5465fda562f3fcf1cd78dbd9d65ac3e8be539.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.mapbox.mapboxsdk\mapbox-android-telemetry\2.2.9\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="612aa385190830bd6db2f01552caf3519835dc9a">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.mapbox.mapboxsdk-mapbox-android-telemetry-2.2.9_b8560094fa14342ae09955367789c3f2a85600f6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_70f0ce36525557d687279cc30ceb8bc83e751a7a.jar" />
     </item>
     <item
         is-multidex="false"
@@ -189,6 +378,159 @@
         revision="23.0.1"
         sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
         <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\okhttp-urlconnection-3.6.0_3131b5346a14b053b19e9b91d8bc435f39964e93.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.android.support\support-fragment\27.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="618f75fe11febf263e3234c7da7dc892232a5608">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-27.0.2_9e210f6d4e90c504053332e57f52494576d1fd08.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.mapbox.mapboxsdk\mapbox-java-services\2.2.9\32099854fcd364940c562d83c1394aa917faa79b\mapbox-java-services-2.2.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="32099854fcd364940c562d83c1394aa917faa79b">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\mapbox-java-services-2.2.9_ad1c59576e229772a6e9138e60e8e24b198d1d23.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\27.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="ed6560f31a6a40b5965f5879d8f2eab1f68def05">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-27.0.2_c6fc5da61bc6e8cd82551814714ea6825eb00ed1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.13.0\a9283170b7305c8d92d25aff02a6ab7e45d06cbe\okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\okio-1.13.0_88e1bd9c93c8843b6719da9bcd3de06cceec3d1a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.react\react-native\0.55.4\jars\libs\infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\infer-annotations-4.0_d213481d7a20478fc41aed3c2492e7a12110ada2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\27.0.2\b9ef4342c934a1a8b107506273dc8061662a322\support-annotations-27.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="0b9ef4342c934a1a8b107506273dc8061662a322">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\support-annotations-27.0.2_1bec3e4924644c78a98f7a1ac3c10ff052e98935.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\27.0.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="fe3916317a699975bcce0cba2d13fd2d8cf88922">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-27.0.2_88ef6bc43d30db80e41697dcf69e5eb189b1f863.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\android.arch.core\common\1.0.0\a2d487452376193fc8c103dd2b9bd5f2b1b44563\common-1.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="a2d487452376193fc8c103dd2b9bd5f2b1b44563">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\common-1.0.0_0857f2e56849a0d0d5802aba5329c87a3bcda8ca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.6.0\81887458b69ddc32722df7e4c35235fd74e6a8ba\logging-interceptor-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="81887458b69ddc32722df7e4c35235fd74e6a8ba">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\logging-interceptor-3.6.0_e2026638603c0f8979cee838eefa248f5d887bb2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\com.mapbox.mapboxsdk\mapbox-java-geojson\2.2.9\c53f47c9fdf762ae6fd86efd056da7a1651a0fed\mapbox-java-geojson-2.2.9.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c53f47c9fdf762ae6fd86efd056da7a1651a0fed">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\mapbox-java-geojson-2.2.9_6a7c2507a5d84b83c3fab5127be3cb29137551a6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.mapbox.mapboxsdk\mapbox-android-sdk\5.4.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="68eea7ff8efd77b77cdca73805f85caf7e40be04">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.mapbox.mapboxsdk-mapbox-android-sdk-5.4.1_f9501b73bb9927b8ed4edc5f4fc33a3c168ca4f4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fbui.textlayoutbuilder\textlayoutbuilder\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_24bf7dc63244845bc53239bee1e2de0cf86ecffa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.mapbox.mapboxsdk\mapbox-android-plugin-localization\0.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6a58a614ff6c48c46b27cba3859c069204bd7fb6">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.mapbox.mapboxsdk-mapbox-android-plugin-localization-0.1.0_ed9b7558ddd0dbdea37bfb4f4e265f93fd5a935c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Ananth\.gradle\caches\modules-2\files-2.1\javax.inject\javax.inject\1\6975da39a7040257bd51d21a231b76c915872d38\javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\javax.inject-1_70f0ce36525557d687279cc30ceb8bc83e751a7a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\TMS\mapbox-react-native-mapbox-gl\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="930fa86f887b070477528ee97075f60b091e7f7a">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\TMS-mapbox-react-native-mapbox-gl-unspecified_5666f0906edf308b97b896cd1df2cfff377a3c3b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.mapzen.android\lost\3.0.4\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d35b57785e805406538454943d0ed0ba97f6e653">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.mapzen.android-lost-3.0.4_ec316e394bc18f3b944f76d4832eae6aa218bfcb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.fresco\fresco\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.1"
+        sha1="fe85b87215e405f5917d40ae4960488ac9224b74">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.fresco-fresco-1.3.0_5b7780b35f4cb992de350350e7d501c3ca2479d8.jar" />
     </item>
 
 </items>

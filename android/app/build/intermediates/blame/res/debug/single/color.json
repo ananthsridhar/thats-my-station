@@ -1,38 +1,78 @@
 [
     {
         "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
-        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color\\abc_secondary_text_material_light.xml"
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_switch_track.xml",
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_default.xml",
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_tint_default.xml"
+    },
+    {
+        "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_text_material.xml",
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_btn_colored_text_material.xml"
     },
     {
         "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
-        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color\\abc_primary_text_material_dark.xml"
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
         "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
-        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color\\abc_primary_text_material_light.xml"
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_hint_foreground_material_dark.xml"
     },
     {
         "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
-        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color\\switch_thumb_material_dark.xml"
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
         "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
-        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color\\abc_secondary_text_material_dark.xml"
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_edittext.xml",
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_tint_edittext.xml"
+    },
+    {
+        "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_spinner.xml",
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_tint_spinner.xml"
+    },
+    {
+        "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_btn_colored_borderless_text_material.xml",
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_btn_colored_borderless_text_material.xml"
     },
     {
         "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
-        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
         "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
-        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
     },
     {
         "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
-        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color\\switch_thumb_material_light.xml"
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\switch_thumb_material_light.xml"
     },
     {
         "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
-        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.0.1\\res\\color\\abc_search_url_text.xml"
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_seek_thumb.xml",
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_tint_seek_thumb.xml"
+    },
+    {
+        "merged": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_tint_btn_checkable.xml",
+        "source": "D:\\Dev\\Repos\\React Laboratory\\tmsN\\android\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\27.0.2\\res\\color\\abc_tint_btn_checkable.xml"
     }
 ]
