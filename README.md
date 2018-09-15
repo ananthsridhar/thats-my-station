@@ -1,4 +1,8 @@
 
+
+11-09-2018
+Since Im planning to use Mapbox for the location mapping in light of Google getting big headed about their maps API pricing, I needed to first eject the project from creat-react-native. Since Mapbox integration for React Native needs some Native code intervention. So I set about nervously ejecting the code, cause frankly the warnings are pretty intense, Anyways, Of course as expected, things didnt quite work after ejecting. But with considerable Googling and some configuration changes I got the app running. Trying the map integration resulted in the App crashing. Realised the target API in the fradle file had to be above 23, preferably 26 I suppose. That got the Map running phew.
+
 02-09-2018
 Integrated mocked up station data to just get a feel of the data flow, realistically. Mocked up data has the station names line no and coordiantes, to simulate the real type of data we're going to be using. Wired up the data to the components. So that the overlay accepts the data and when the station is selected, it is displayed back at the button. Also included alert for when someone gets cocky and tries select To before From (Idea : Perhaps auto detect nearest station(to be used as origin) based on location?)
 
