@@ -1,4 +1,5 @@
 import React from 'react';
+import {PermissionsAndroid} from 'react-native';
 import { Alert,Button,StyleSheet, Text, View,Dimensions,Picker,TouchableOpacity, ScrollView } from 'react-native';
 import { Icon ,Overlay } from 'react-native-elements';
 import Mapbox from '@mapbox/react-native-mapbox-gl';
@@ -14,14 +15,40 @@ export default class MapComponent extends React.Component {
 
   }
 
+  componentDidMount(){
+    PermissionsAndroid.requestMultiple(
+            [PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+            PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION],
+            {
+                title: 'Give Location Permission',
+            message: 'App needs location permission to find your position.'
+        }
+    ).then(granted => {
+        console.log(granted);
+        Promise.resolve();
+    }).catch(err => {
+        console.warn(err);
+        Promise.reject(err);
+    });
+  }
+
   render(){
     return (
+      <View style={{flex:3,borderRadius:20,borderColor:"green",borderWidth:5,overflow: 'hidden',margin:20,marginTop:0}}>
             <Mapbox.MapView
                       styleURL={Mapbox.StyleURL.Dark}
-                      zoomLevel={15}
-                      centerCoordinate={[11.256, 43.770]}
-                      style={{flex:1}}>
+                      zoomLevel={13}
+                      style={{flex:1}}
+                      showUserLocation={true}
+                      userTrackingMode={3}
+                      pitch= {60}
+                      pitchWithRotate= {false}
+                      dragRotate= {false}
+                      touchZoomRotate = {false}
+                      >
           </Mapbox.MapView>
+
+      </View>
   );
   }
 }

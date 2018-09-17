@@ -16,10 +16,10 @@ export default class DetailScreen extends React.Component {
     const destination = navigation.getParam('toStation',{station_name:'Unset'})
     return (
         <View style={styles.mainContainer}  >
-            <DetailComponent origin={origin} dest={destination} style={{flex:4,padding:20}}/>
+            <DetailComponent origin={origin} dest={destination} style={{flex:2,padding:20}}/>
             <MapComponent />
-      <View style={{flex:1,backgroundColor:'blue'}}>
-      </View>
+            <View style={{flex:1,backgroundColor:'blue'}}>
+            </View>
           </View>
   );
   }
@@ -84,10 +84,11 @@ class ProgressComponent extends React.Component {
     const style = {
       backgroundColor: this.props.color,
       flex: this.props.progress*0.01,
-      borderRadius:10
+      borderRadius:10,
+      height : 50
     };
     return (
-      <View style={{flex:1,flexDirection: 'row', backgroundColor: "white",borderRadius:10 }}>
+      <View style={{flex:1,flexDirection: 'row', backgroundColor: "white",borderRadius:10,height : 50 }}>
         <View style={style} />
       </View>
     );
@@ -96,9 +97,8 @@ class ProgressComponent extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop : 40,
-    flex: 1,
-    backgroundColor: '#f43'
+    padding : 40,
+    flex: 1
   },
   button: {
     alignItems: 'center',
@@ -109,6 +109,8 @@ const styles = StyleSheet.create({
     borderBottomColor: '#d6d7da'
   },
   mainContainer :{
-    flex:1
+    flex:1,
+    padding:20,
+    backgroundColor: '#f43'
   }
 });
