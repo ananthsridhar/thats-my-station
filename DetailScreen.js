@@ -7,7 +7,11 @@ export default class DetailScreen extends React.Component {
 
   constructor(){
     super();
+    this.onPressGoBack = this.onPressGoBack.bind(this);
+  }
 
+  onPressGoBack(){
+    Alert.alert("Going Back");
   }
 
   render(){
@@ -19,6 +23,12 @@ export default class DetailScreen extends React.Component {
             <DetailComponent origin={origin} dest={destination} style={{flex:2,padding:20}}/>
             <MapComponent />
             <View style={{flex:1,backgroundColor:'blue'}}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={this.onPressGoBack}
+            >
+              <Text> Go Back </Text>
+            </TouchableOpacity>
             </View>
           </View>
   );
@@ -101,12 +111,12 @@ const styles = StyleSheet.create({
     flex: 1
   },
   button: {
+    flex:1,
+    justifyContent:'center',
     alignItems: 'center',
     // backgroundColor: '#DDDDDD',
     padding: 5,
-    borderRadius: 4,
-    borderBottomWidth: 2,
-    borderBottomColor: '#d6d7da'
+    borderRadius: 50
   },
   mainContainer :{
     flex:1,
