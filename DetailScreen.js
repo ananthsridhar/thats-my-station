@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert,Button,StyleSheet, Text, View,Dimensions,Picker,TouchableOpacity, ScrollView } from 'react-native';
+import { Alert,Button,StyleSheet, Text, View,Dimensions,Picker,TouchableOpacity, ScrollView,BackHandler } from 'react-native';
 import { Icon ,Overlay } from 'react-native-elements';
 import MapComponent from './MapComponent.js';
 
@@ -10,8 +10,23 @@ export default class DetailScreen extends React.Component {
     this.onPressGoBack = this.onPressGoBack.bind(this);
   }
 
+  componentDidMount() {
+    BackHandler.addEventListener('hardwareBackPress', this.onPressGoBack);
+  }
+
+  componentWillUnmount() {
+    BackHandler.removeEventListener('hardwareBackPress', this.onPressGoBack);
+  }
+
+
   onPressGoBack(){
-    Alert.alert("Going Back");
+    Alert.alert("Cancel Alarm?","This will cancel your currently running Alarm",
+  [
+    {text:"Schnapp,Cancel",onPress : ()=>console.log("cancel"),style:'cancel'},
+    {text:"Yeah,Cool",onPress : () => this.props.navigation.goBack()}
+  ]);
+    // this.props.navigation.goBack();
+    return true;
   }
 
   render(){
@@ -21,7 +36,7 @@ export default class DetailScreen extends React.Component {
     return (
         <View style={styles.mainContainer}  >
             <DetailComponent origin={origin} dest={destination} style={{flex:2,padding:20}}/>
-            <MapComponent />
+            <MapComponent origin={origin} destination={destination}/>
             <View style={{flex:1,backgroundColor:'blue'}}>
             <TouchableOpacity
               style={styles.button}

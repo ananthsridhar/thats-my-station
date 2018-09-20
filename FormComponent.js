@@ -54,7 +54,7 @@ export default class FormComponent extends React.Component {
   }
 
   setStation(stationId){
-    console.log("Form Component" + stationId);
+    // console.log("Form Component" + stationId);
     let theStation = this.getStation(this.state.stationData,stationId);
     if(this.state.whichModal==="from")
     {
@@ -198,7 +198,7 @@ class OverlayComponent extends React.Component {
 selectedItemReturn(sid){
     this.props.modalClose();
     this.props.itemSelected(sid)
-        console.log("Select "+sid);
+        // console.log("Select "+sid);
   }
 
   render(){

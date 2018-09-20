@@ -12,7 +12,7 @@ export default class MapComponent extends React.Component {
 
   constructor(){
     super();
-
+    this.renderStations = this.renderStations.bind(this);
   }
 
   componentDidMount(){
@@ -32,6 +32,42 @@ export default class MapComponent extends React.Component {
     });
   }
 
+  stationMarker(station){
+    const markerCoordinate = [];
+    markerCoordinate.push(station.station_longitude);
+
+    markerCoordinate.push(station.station_latitude);
+    console.log(markerCoordinate);
+    const markerTitle = station.station_name;
+
+    return (
+      <Mapbox.PointAnnotation
+      key={station.id}
+      id={""+station.id}
+      title={markerTitle}
+      coordinate={markerCoordinate}>
+        <View style={styles.annotationContainer}>
+          <View style={styles.annotationFill} />
+        </View>
+        <Mapbox.Callout title='Look! An annotation!' />
+      </Mapbox.PointAnnotation>
+    );
+  }
+
+  renderStations(){
+    origin = this.props.origin;
+    dest = this.props.destination;
+    const locations = [];
+    locations.push(this.stationMarker(origin));
+    locations.push(this.stationMarker(dest));
+    console.log(locations);
+    return locations;
+  }
+
+  updateCameraOverUser(){
+
+  }
+
   render(){
     return (
       <View style={{flex:3,borderRadius:20,borderColor:"green",borderWidth:5,overflow: 'hidden',margin:20,marginTop:0}}>
@@ -40,15 +76,44 @@ export default class MapComponent extends React.Component {
                       zoomLevel={13}
                       style={{flex:1}}
                       showUserLocation={true}
-                      userTrackingMode={3}
+                      userTrackingMode={Mapbox.UserTrackingModes.FollowWithHeading}
                       pitch= {60}
                       pitchWithRotate= {false}
                       dragRotate= {false}
                       touchZoomRotate = {false}
+                      onUserLocationUpdate = {this.updateCameraOverUser}
+                      rotateEnabled={false}
+                      pitchEnabled = {false}
+                      minZoomLevel = {}
+                      maxZoomLevel = {}
                       >
-          </Mapbox.MapView>
+                    {this.renderStations()}
+              </Mapbox.MapView>
 
       </View>
   );
   }
 }
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  annotationContainer: {
+    width: 30,
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    borderRadius: 15,
+  },
+  annotationFill: {
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    backgroundColor: 'orange',
+    transform: [{ scale: 0.6 }],
+  }
+});
