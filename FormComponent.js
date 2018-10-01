@@ -1,6 +1,7 @@
 import React from 'react';
 import { Alert,Button,StyleSheet, Text, View,Dimensions,Picker,TouchableOpacity, ScrollView } from 'react-native';
 import { Icon ,Overlay } from 'react-native-elements';
+import OverlayComponent from './components/OverlayComponent.js'
 
 import station_data from './resources/stationData.json'
 
@@ -21,7 +22,7 @@ export default class FormComponent extends React.Component {
     this.onPress = this.onPress.bind(this);
     this.setStation = this.setStation.bind(this);
     this.onPressGo = this.onPressGo.bind(this);
-    //console.log(station_data[0].station_name);
+    //console.log(station_data[0].name);
   }
 
   componentDidMount(){
@@ -74,12 +75,15 @@ export default class FormComponent extends React.Component {
   }
 
   onPressGo(){
+    console.log("Go!")
     if(this.state.fromStation!="" && this.state.toStation!="")
     {
+      console.log("Go2!")
       this.props.navigation.navigate('Details',{
         fromStation : this.state.fromStation,
         toStation : this.state.toStation,
       });
+      console.log("Go3!")
     }
     else {
       Alert.alert("Select Stations First");
@@ -103,7 +107,7 @@ export default class FormComponent extends React.Component {
                 name="from"
               >
               <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
-                <Text> {this.state.fromStation==""?"SELECT ORIGIN":this.state.fromStation.station_name} </Text><Icon name='rowing'/>
+                <Text> {this.state.fromStation==""?"SELECT ORIGIN":this.state.fromStation.name} </Text><Icon name='rowing'/>
                 </View>
               </TouchableOpacity>
             </View>
@@ -113,7 +117,7 @@ export default class FormComponent extends React.Component {
                 onPress={()=>this.onPress('to')}
                 name="to"
               >
-                <Text> {this.state.toStation==""?"SELECT DESTINATION":this.state.toStation.station_name} </Text>
+                <Text> {this.state.toStation==""?"SELECT DESTINATION":this.state.toStation.name} </Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -185,52 +189,52 @@ getAllData() {
 
 }
 
-class OverlayComponent extends React.Component {
-  constructor(props)
-  {
-    super(props);
-    this.state = {
-      modalVisible : this.props.modalVisible
-    }
-    this.selectedItemReturn = this.selectedItemReturn.bind(this);
-  }
-
-selectedItemReturn(sid){
-    this.props.modalClose();
-    this.props.itemSelected(sid)
-        // console.log("Select "+sid);
-  }
-
-  render(){
-    return (
-      <Overlay isVisible={this.props.modalVisible}
-      onBackdropPress={() => this.props.modalClose()}>
-        <View style={{padding : 40,backgroundColor:'yellow',height:400}}>
-          <ScrollView>
-            {    this.props.modalData.map((data,id)=>{
-                  return (
-                    <TouchableListItem key={id} sid={data.id} text={data.station_name} selectItem={this.selectedItemReturn}/>
-                  )
-              })
-            }
-          </ScrollView>
-        </View>
-      </Overlay>
-    );
-  }
-}
-
-
-class TouchableListItem extends React.Component {
-  render(){
-    return (
-      <TouchableOpacity style={{backgroundColor:'green',padding:10,borderWidth: 0.5,
-      borderColor: '#d6d7da'}} onPress={()=>this.props.selectItem(this.props.sid)}>
-        <Text>{this.props.text}</Text>
-      </TouchableOpacity>
-    );
-  }
-}
+// class OverlayComponent extends React.Component {
+//   constructor(props)
+//   {
+//     super(props);
+//     this.state = {
+//       modalVisible : this.props.modalVisible
+//     }
+//     this.selectedItemReturn = this.selectedItemReturn.bind(this);
+//   }
+//
+// selectedItemReturn(sid){
+//     this.props.modalClose();
+//     this.props.itemSelected(sid)
+//         // console.log("Select "+sid);
+//   }
+//
+//   render(){
+//     return (
+//       <Overlay isVisible={this.props.modalVisible}
+//       onBackdropPress={() => this.props.modalClose()}>
+//         <View style={{padding : 40,backgroundColor:'yellow',height:400}}>
+//           <ScrollView>
+//             {    this.props.modalData.map((data,id)=>{
+//                   return (
+//                     <TouchableListItem key={id} sid={data.id} text={data.name} selectItem={this.selectedItemReturn}/>
+//                   )
+//               })
+//             }
+//           </ScrollView>
+//         </View>
+//       </Overlay>
+//     );
+//   }
+// }
+//
+//
+// class TouchableListItem extends React.Component {
+//   render(){
+//     return (
+//       <TouchableOpacity style={{backgroundColor:'green',padding:10,borderWidth: 0.5,
+//       borderColor: '#d6d7da'}} onPress={()=>this.props.selectItem(this.props.sid)}>
+//         <Text>{this.props.text}</Text>
+//       </TouchableOpacity>
+//     );
+//   }
+// }
 
 
 const styles = StyleSheet.create({
