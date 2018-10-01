@@ -1,5 +1,5 @@
 import React from "react";
-import { PermissionsAndroid } from "react-native";
+
 import {
   Alert,
   Button,
@@ -24,61 +24,40 @@ export default class MapComponent extends React.Component {
   constructor() {
     super();
     this.state = {
-      annotations : ""
-    }
+      annotations: ""
+    };
     this.renderAnnotations = this.renderAnnotations.bind(this);
   }
 
   componentDidMount() {
-    PermissionsAndroid.requestMultiple(
-      [
-        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
-        PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION
-      ],
-      {
-        title: "Give Location Permission",
-        message: "App needs location permission to find your position."
-      }
-    )
-      .then(granted => {
-        console.log(granted);
-        Promise.resolve();
-      })
-      .catch(err => {
-        console.warn(err);
-        Promise.reject(err);
-      });
-      this.renderAnnotations();
+
+    this.renderAnnotations();
   }
 
   updateCameraOverUser() {}
 
-  renderAnnotations()
-  {
+  renderAnnotations() {
     var locations = [];
     var annotation = [];
     locations.push(this.props.origin);
     locations.push(this.props.destination);
-    locations.map((station,id)=>{
+    locations.map((station, id) => {
       annotation.push(
-      <Mapbox.PointAnnotation
-        key={station.id}
-        id={"" + station.id}
-        coordinate={[
-          station.longitude,
-          station.latitude
-        ]}
-      >
-        <View style={styles.annotationContainer}>
-          <View style={styles.annotationFill} />
-        </View>
-        <Mapbox.Callout title={station.name} />
-      </Mapbox.PointAnnotation>
-      )
-    })
+        <Mapbox.PointAnnotation
+          key={station.id}
+          id={"" + station.id}
+          coordinate={[station.longitude, station.latitude]}
+        >
+          <View style={styles.annotationContainer}>
+            <View style={styles.annotationFill} />
+          </View>
+          <Mapbox.Callout title={station.name} />
+        </Mapbox.PointAnnotation>
+      );
+    });
     this.setState({
-      annotations : annotation
-    })
+      annotations: annotation
+    });
   }
 
   render() {
@@ -110,7 +89,7 @@ export default class MapComponent extends React.Component {
           minZoomLevel={10}
           maxZoomLevel={15}
         >
-        {this.state.annotations}
+          {this.state.annotations}
         </Mapbox.MapView>
       </View>
     );

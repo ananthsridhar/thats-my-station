@@ -12,7 +12,7 @@ import {
   TextInput
 } from "react-native";
 import { Icon, Overlay } from "react-native-elements";
-import stationData from '../resources/stationData.json';
+import stationData from "../resources/stationData.json";
 
 export default class OverlayComponent extends React.Component {
   constructor(props) {
@@ -29,24 +29,25 @@ export default class OverlayComponent extends React.Component {
 
   selectedItemReturn(sid) {
     this.setState({
-      stationList : this.props.modalData,
-      stationSearch : ""
-    })
+      stationList: this.props.modalData,
+      stationSearch: ""
+    });
     this.props.modalClose();
     this.props.itemSelected(sid);
     // console.log("Select "+sid);
   }
 
   filterStationList() {
-
     let stn = this.state.stationSearch;
     //console.log("filterStationList with "+stn);
-      let tempList = this.props.modalData;
-      tempList = tempList.filter(function (station) { return station.name.includes(stn) });
-      this.setState({
-        stationList: tempList
-      });
-      // console.log(tempList);
+    let tempList = this.props.modalData;
+    tempList = tempList.filter(function(station) {
+      return station.name.includes(stn);
+    });
+    this.setState({
+      stationList: tempList
+    });
+    // console.log(tempList);
   }
 
   onSearchBarChange(stationText) {
@@ -55,12 +56,14 @@ export default class OverlayComponent extends React.Component {
       {
         stationSearch: stationText
       },
-      () => {this.filterStationList();}
+      () => {
+        this.filterStationList();
+      }
     );
   }
 
   render() {
-    let stations = (this.state.stationSearch!=""?this.props.modalData:"");
+    let stations = this.state.stationSearch != "" ? this.props.modalData : "";
     return (
       <Overlay
         isVisible={this.props.modalVisible}
@@ -70,7 +73,7 @@ export default class OverlayComponent extends React.Component {
           <TextInput
             style={{ height: 40 }}
             placeholder="Search Bar"
-            onChangeText={(text)=>this.onSearchBarChange(text)}
+            onChangeText={text => this.onSearchBarChange(text)}
           />
           <ScrollView>
             {this.state.stationList.map((data, id) => {
