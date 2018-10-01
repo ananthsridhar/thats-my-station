@@ -3,7 +3,7 @@ import { Alert,Button,StyleSheet, Text, View,Dimensions,Picker,TouchableOpacity,
 import { Icon ,Overlay } from 'react-native-elements';
 import OverlayComponent from './components/OverlayComponent.js'
 
-import station_data from './resources/stationData.json'
+import station_data from '../resources/stationData.json'
 
 export default class FormComponent extends React.Component {
 

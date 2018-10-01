@@ -14,7 +14,7 @@ import {
 import { Icon, Overlay } from "react-native-elements";
 import Mapbox from "@mapbox/react-native-mapbox-gl";
 
-import station_data from "./resources/stationData.json";
+import station_data from "../resources/stationData.json";
 
 Mapbox.setAccessToken(
   "pk.eyJ1IjoibmFudGhzcmVlMjIiLCJhIjoiY2psZzZ3enliMTB0czNxcWc5OW82c3VsZCJ9.1OhBvdJmJn5AjBs4w71Luw"
