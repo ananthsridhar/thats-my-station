@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert,Button,StyleSheet, Text, View,Dimensions,Picker,TouchableOpacity, ScrollView } from 'react-native';
 import { Icon ,Overlay } from 'react-native-elements';
-import OverlayComponent from './components/OverlayComponent.js'
+import OverlayComponent from './OverlayComponent.js'
 
 import station_data from '../resources/stationData.json'
 

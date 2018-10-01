@@ -12,12 +12,13 @@ import {
   TextInput
 } from "react-native";
 import { Icon, Overlay } from "react-native-elements";
+import stationData from '../resources/stationData.json';
 
 export default class OverlayComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stationList: this.props.modalData,
+      stationList: stationData,
       modalVisible: this.props.modalVisible,
       stationSearch: ""
     };
@@ -28,8 +29,8 @@ export default class OverlayComponent extends React.Component {
 
   selectedItemReturn(sid) {
     this.setState({
-      this.stationList : this.props.modalData,
-      this.state.stationSearch : ""
+      stationList : this.props.modalData,
+      stationSearch : ""
     })
     this.props.modalClose();
     this.props.itemSelected(sid);
