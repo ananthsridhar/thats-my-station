@@ -13,20 +13,92 @@ import {
 } from "react-native";
 import { Icon, Overlay } from "react-native-elements";
 import MapComponent from "./MapComponent.js";
+import utilityFunctions from "../scripts/utilities.js";
+
 
 export default class DetailScreen extends React.Component {
   constructor() {
     super();
     this.onPressGoBack = this.onPressGoBack.bind(this);
+    this.getCurrentLocationDistance = this.getCurrentLocationDistance.bind(this);
+    this.state = {
+      origin : {
+        "id": 2,
+        "name": "Chennai Beach",
+        "line_no": 2,
+        "pos_in_line": 0,
+        "latitude": 13.092253,
+        "longitude": 80.292397
+      },
+      destination :{
+        "id": 4,
+        "name": "Chennai Beach",
+        "line_no": 2,
+        "pos_in_line": 0,
+        "latitude": 13.092253,
+        "longitude": 80.292397
+      }
+    }
+    utilityFunctions.scriptImportTester();
   }
 
   componentDidMount() {
     BackHandler.addEventListener("hardwareBackPress", this.onPressGoBack);
+    console.log("Mounted");
+    const { navigation } = this.props;
+    var orig = navigation.getParam("fromStation", {name: "Unset"});
+    var dest =navigation.getParam("toStation", {name: "Unset"}) ;
+    this.setState({
+      origin : orig,
+      destination : dest,
+      distanceToDest : utilityFunctions.getDistanceFromLatLonInKm(orig.latitude,orig.longitude,dest.latitude,dest.longitude)
+    })
+    //Initially find out how far to destination
+    this.getCurrentLocationDistance();
+    //Run function to poll location every five seconds
+    this.distanceIntervaledPing();
   }
 
   componentWillUnmount() {
     BackHandler.removeEventListener("hardwareBackPress", this.onPressGoBack);
+   clearInterval(this.state.locTimer);
   }
+
+  distanceIntervaledPing(){
+    let timer = setInterval(()=>{this.getCurrentLocationDistance()},POLLING_INTERVAL);
+    this.setState({
+      locTimer : timer
+    })
+  }
+
+  getCurrentLocationDistance(){
+    navigator.geolocation.getCurrentPosition((pos)=>{
+      console.log("Recieved Location : "+pos.coords.latitude);
+      this.setState({
+        distanceToDest : utilityFunctions.getDistanceFromLatLonInKm(pos.coords.latitude,pos.coords.longitude,this.state.destination.latitude,this.state.destination.longitude)
+      });
+    })
+  }
+
+  getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+    var R = 6371; // Radius of the earth in km
+    var dLat = this.deg2rad(lat2 - lat1); // deg2rad below
+    var dLon = this.deg2rad(lon2 - lon1);
+    var a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(this.deg2rad(lat1)) *
+        Math.cos(this.deg2rad(lat2)) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c; // Distance in km
+    return d;
+  }
+
+  deg2rad(deg) {
+    return deg * (Math.PI / 180);
+  }
+
 
   onPressGoBack() {
     Alert.alert(
@@ -47,12 +119,10 @@ export default class DetailScreen extends React.Component {
 
   render() {
     const { navigation } = this.props;
-    const origin = navigation.getParam("fromStation", {
-      name: "Unset"
-    });
-    const destination = navigation.getParam("toStation", {
-      name: "Unset"
-    });
+    var origin = this.state.origin;
+    var destination =this.state.destination ;
+    console.log(this.getDistanceFromLatLonInKm(origin.latitude,origin.longitude,destination.latitude,destination.longitude));
+    console.log("State : "+this.state.origin.name+ " "+this.state.destination.name + "distanceToDest : "+this.state.distanceToDest);
     return (
       <View style={styles.mainContainer}>
         <DetailComponent
@@ -60,7 +130,7 @@ export default class DetailScreen extends React.Component {
           dest={destination}
           style={{ flex: 2, padding: 20 }}
         />
-        <MapComponent origin={origin} destination={destination} />
+        <MapComponent origin={navigation.getParam("fromStation", {name: "Unset"})} destination={navigation.getParam("toStation", {name: "Unset"})} />
         <View style={{ flex: 1, backgroundColor: "blue" }}>
           <TouchableOpacity style={styles.button} onPress={this.onPressGoBack}>
             <Text> Go Back </Text>
@@ -87,15 +157,11 @@ class DetailComponent extends React.Component {
       <View style={styles.container}>
         <View style={{ flex: 1 }}>
           <View style={{ flex: 1, flexDirection: "row" }}>
-            <DisplayField
-              color="white"
-              text={"From " + origin.name}
-              fSize={20}
-            />
+            <DisplayField color="white" text={origin.name} fSize={15} />
             <DisplayField
               color="white"
               text={"To " + destination.name}
-              fSize={20}
+              fSize={15}
             />
           </View>
           <View

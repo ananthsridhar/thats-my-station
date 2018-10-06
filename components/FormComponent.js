@@ -48,11 +48,11 @@ export default class FormComponent extends React.Component {
       }
     )
       .then(granted => {
-        console.log(granted);
+        // console.log(granted);
         Promise.resolve();
       })
       .catch(err => {
-        console.warn(err);
+        // console.warn(err);
         Promise.reject(err);
       });
   }

@@ -30,11 +30,12 @@ export default class MapComponent extends React.Component {
   }
 
   componentDidMount() {
-
     this.renderAnnotations();
   }
 
-  updateCameraOverUser() {}
+  updateCameraOverUser() {
+    
+  }
 
   renderAnnotations() {
     var locations = [];

@@ -39,10 +39,12 @@ export default class OverlayComponent extends React.Component {
 
   filterStationList() {
     let stn = this.state.stationSearch;
+
+      console.log("changing search bar with "+stn);
     //console.log("filterStationList with "+stn);
     let tempList = this.props.modalData;
     tempList = tempList.filter(function(station) {
-      return station.name.includes(stn);
+      return station.name.toLowerCase().includes(stn);
     });
     this.setState({
       stationList: tempList
@@ -51,10 +53,9 @@ export default class OverlayComponent extends React.Component {
   }
 
   onSearchBarChange(stationText) {
-    console.log("changing search bar");
     this.setState(
       {
-        stationSearch: stationText
+        stationSearch: stationText.toLowerCase()
       },
       () => {
         this.filterStationList();
