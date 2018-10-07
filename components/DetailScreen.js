@@ -15,6 +15,7 @@ import { Icon, Overlay } from "react-native-elements";
 import MapComponent from "./MapComponent.js";
 import utilityFunctions from "../scripts/utilities.js";
 
+const POLLING_INTERVAL = 5 * 1000;
 
 export default class DetailScreen extends React.Component {
   constructor() {
@@ -61,7 +62,7 @@ export default class DetailScreen extends React.Component {
 
   componentWillUnmount() {
     BackHandler.removeEventListener("hardwareBackPress", this.onPressGoBack);
-   clearInterval(this.state.locTimer);
+    clearInterval(this.state.locTimer);
   }
 
   distanceIntervaledPing(){
@@ -80,27 +81,8 @@ export default class DetailScreen extends React.Component {
     })
   }
 
-  getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
-    var R = 6371; // Radius of the earth in km
-    var dLat = this.deg2rad(lat2 - lat1); // deg2rad below
-    var dLon = this.deg2rad(lon2 - lon1);
-    var a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(this.deg2rad(lat1)) *
-        Math.cos(this.deg2rad(lat2)) *
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c; // Distance in km
-    return d;
-  }
-
-  deg2rad(deg) {
-    return deg * (Math.PI / 180);
-  }
-
-
   onPressGoBack() {
+    utilityFunctions.getTotalTravelTime(this.state.origin,this.state.destination);
     Alert.alert(
       "Cancel Alarm?",
       "This will cancel your currently running Alarm",
@@ -121,7 +103,7 @@ export default class DetailScreen extends React.Component {
     const { navigation } = this.props;
     var origin = this.state.origin;
     var destination =this.state.destination ;
-    console.log(this.getDistanceFromLatLonInKm(origin.latitude,origin.longitude,destination.latitude,destination.longitude));
+    console.log(utilityFunctions.getDistanceFromLatLonInKm(origin.latitude,origin.longitude,destination.latitude,destination.longitude));
     console.log("State : "+this.state.origin.name+ " "+this.state.destination.name + "distanceToDest : "+this.state.distanceToDest);
     return (
       <View style={styles.mainContainer}>

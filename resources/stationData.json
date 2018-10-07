@@ -5,7 +5,8 @@
     "line_no": 1,
     "pos_in_line": 0,
     "latitude": 13.092253,
-    "longitude": 80.292397
+    "longitude": 80.292397,
+    "coordinates": [80.292397,13.092253]
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "line_no": 2,
     "pos_in_line": 0,
     "latitude": 13.092253,
-    "longitude": 80.292397
+    "longitude": 80.292397,
+    "coordinates": [80.292397,13.092253]
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "line_no": 1,
     "pos_in_line": 1,
     "latitude": 13.083172,
-    "longitude": 80.282674
+    "longitude": 80.282674,
+    "coordinates": [80.282674,13.083172]
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "line_no": 2,
     "pos_in_line": 1,
     "latitude": 13.083172,
-    "longitude": 80.282674
+    "longitude": 80.282674,
+    "coordinates": [80.282674,13.083172]
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "line_no": 1,
     "pos_in_line": 2,
     "latitude": 13.079532,
-    "longitude": 80.276496
+    "longitude": 80.276496,
+    "coordinates": [80.276496,13.079532]
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "line_no": 1,
     "pos_in_line": 3,
     "latitude": 13.073828,
-    "longitude": 80.273833
+    "longitude": 80.273833,
+    "coordinates": [80.273833,13.073828]
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "line_no": 1,
     "pos_in_line": 4,
     "latitude": 13.061907,
-    "longitude": 80.280527
+    "longitude": 80.280527,
+    "coordinates": [80.280527,13.061907]
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "line_no": 1,
     "pos_in_line": 5,
     "latitude": 13.055248,
-    "longitude": 80.280558
+    "longitude": 80.280558,
+    "coordinates": [80.280558,13.055248]
   },
   {
     "id": 9,
@@ -69,7 +77,9 @@
     "line_no": 1,
     "pos_in_line": 6,
     "latitude": 13.045077,
-    "longitude": 80.276752
+    "longitude": 80.276752,
+    "coordinates": [80.276752,13.045077]
+
   },
   {
     "id": 10,
@@ -77,7 +87,9 @@
     "line_no": 1,
     "pos_in_line": 7,
     "latitude": 13.040551,
-    "longitude": 80.269889
+    "longitude": 80.269889,
+    "coordinates": [80.269889,13.040551]
+
   },
   {
     "id": 11,
@@ -85,7 +97,9 @@
     "line_no": 1,
     "pos_in_line": 8,
     "latitude": 13.03466,
-    "longitude": 80.266988
+    "longitude": 80.266988,
+    "coordinates": [80.266988,13.03466]
+
   },
   {
     "id": 12,
@@ -93,7 +107,9 @@
     "line_no": 1,
     "pos_in_line": 9,
     "latitude": 13.027317,
-    "longitude": 80.260965
+    "longitude": 80.260965,
+    "coordinates": [80.260965,13.027317]
+
   },
   {
     "id": 13,
@@ -101,7 +117,8 @@
     "line_no": 1,
     "pos_in_line": 10,
     "latitude": 13.020596,
-    "longitude": 80.251917
+    "longitude": 80.251917,
+    "coordinates": [80.251917,13.020596]
   },
   {
     "id": 14,
@@ -109,7 +126,9 @@
     "line_no": 1,
     "pos_in_line": 11,
     "latitude": 13.013725,
-    "longitude": 80.248253
+    "longitude": 80.248253,
+    "coordinates": [80.248253,13.013725]
+
   },
   {
     "id": 15,
@@ -117,7 +136,9 @@
     "line_no": 1,
     "pos_in_line": 12,
     "latitude": 13.00548,
-    "longitude": 80.247732
+    "longitude": 80.247732,
+    "coordinates": [80.247732,13.00548]
+
   },
   {
     "id": 16,
@@ -125,7 +146,9 @@
     "line_no": 1,
     "pos_in_line": 13,
     "latitude": 12.996353,
-    "longitude": 80.249555
+    "longitude": 80.249555,
+    "coordinates": [80.249555,12.996353]
+
   },
   {
     "id": 17,
@@ -133,7 +156,9 @@
     "line_no": 1,
     "pos_in_line": 14,
     "latitude": 12.989427,
-    "longitude": 80.251387
+    "longitude": 80.251387,
+    "coordinates": [80.251387,12.989427]
+
   },
   {
     "id": 18,
@@ -141,7 +166,9 @@
     "line_no": 1,
     "pos_in_line": 15,
     "latitude": 12.978667,
-    "longitude": 80.240973
+    "longitude": 80.240973,
+    "coordinates": [80.240973,12.978667]
+
   },
   {
     "id": 19,
@@ -149,7 +176,9 @@
     "line_no": 1,
     "pos_in_line": 10,
     "latitude": 12.975453,
-    "longitude": 80.231525
+    "longitude": 80.231525,
+    "coordinates": [80.231525,12.975453]
+
   },
   {
     "id": 20,
@@ -157,6 +186,8 @@
     "line_no": 1,
     "pos_in_line": 10,
     "latitude": 12.967304,
-    "longitude": 80.21946
+    "longitude": 80.21946,
+    "coordinates": [80.21946,12.967304]        
+
   }
 ]
