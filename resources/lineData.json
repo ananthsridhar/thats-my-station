@@ -1,0 +1,9 @@
+[
+  {
+    "number": 0,
+    "name": "MRTS",
+    "noOfStations": 18,
+    "firstStationId": 1,
+    "lastStationId": 20
+  }
+]
