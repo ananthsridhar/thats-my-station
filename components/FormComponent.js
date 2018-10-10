@@ -15,6 +15,7 @@ import { Icon, Overlay } from "react-native-elements";
 import OverlayComponent from "./OverlayComponent.js";
 
 import station_data from "../resources/stationData.json";
+import utilityFunctions from "../scripts/utilities.js";
 
 export default class FormComponent extends React.Component {
   constructor() {
@@ -84,9 +85,9 @@ export default class FormComponent extends React.Component {
 
   setStation(stationId) {
     // console.log("Form Component" + stationId);
-    let theStation = this.getStation(this.state.stationData, stationId);
+    let theStation = utilityFunctions.getStation(stationId);
     if (this.state.whichModal === "from") {
-      let toL = this.setToStations(this.state.stationData, theStation.line_no);
+      let toL = utilityFunctions.setToStations(theStation.line_no);
       this.setState({
         fromStation: theStation,
         toStation: "",
@@ -177,44 +178,6 @@ export default class FormComponent extends React.Component {
     );
   }
 
-  /*Utility functions to retrieve station data*/
-
-  getAllData() {
-    var fromDd = [];
-    console.log("Called Station Data Retrieval");
-    fetch("https://my.api.mockaroo.com/station_data.json?key=41b13700")
-      .then(results => {
-        return results.json();
-      })
-      .then(data => {
-        this.setState({
-          stationData: data,
-          fromStations: data
-        });
-      });
-  }
-
-  getStation(stationData, station_id) {
-    let fromStation = "";
-    for (let i = 0; i < stationData.length; i++) {
-      if (stationData[i].id == station_id) {
-        fromStation = stationData[i];
-        return fromStation;
-      }
-    }
-  }
-
-  setToStations(stationData, line_no) {
-    let toDd = [];
-    stationData.map((station, id) => {
-      if (station.line_no == line_no) {
-        toDd.push(station);
-      }
-    });
-    return toDd;
-  }
-
-  /*End Utility functions*/
 }
 
 const styles = StyleSheet.create({

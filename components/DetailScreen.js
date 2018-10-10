@@ -29,7 +29,8 @@ export default class DetailScreen extends React.Component {
         "line_no": 2,
         "pos_in_line": 0,
         "latitude": 13.092253,
-        "longitude": 80.292397
+        "longitude": 80.292397,
+        "coordinates":[80.292397,13.092253]
       },
       destination :{
         "id": 4,
@@ -37,8 +38,10 @@ export default class DetailScreen extends React.Component {
         "line_no": 2,
         "pos_in_line": 0,
         "latitude": 13.092253,
-        "longitude": 80.292397
-      }
+        "longitude": 80.292397,
+        "coordinates":[80.292397,13.092253]
+      },
+      timeLeft : 0
     }
     utilityFunctions.scriptImportTester();
   }
@@ -52,7 +55,8 @@ export default class DetailScreen extends React.Component {
     this.setState({
       origin : orig,
       destination : dest,
-      distanceToDest : utilityFunctions.getDistanceFromLatLonInKm(orig.latitude,orig.longitude,dest.latitude,dest.longitude)
+      distanceToDest : utilityFunctions.getDistanceFromLatLonInKm(orig.coordinates,dest.coordinates),
+      timeLeft : utilityFunctions.getTotalTravelTime(orig,dest)
     })
     //Initially find out how far to destination
     this.getCurrentLocationDistance();
@@ -75,14 +79,14 @@ export default class DetailScreen extends React.Component {
   getCurrentLocationDistance(){
     navigator.geolocation.getCurrentPosition((pos)=>{
       console.log("Recieved Location : "+pos.coords.latitude);
+      console.log(this.state.timeLeft);
       this.setState({
-        distanceToDest : utilityFunctions.getDistanceFromLatLonInKm(pos.coords.latitude,pos.coords.longitude,this.state.destination.latitude,this.state.destination.longitude)
+        distanceToDest : utilityFunctions.getDistanceFromLatLonInKm([pos.coords.longitude,pos.coords.latitude],this.state.destination.coordinates)
       });
     })
   }
 
   onPressGoBack() {
-    utilityFunctions.getTotalTravelTime(this.state.origin,this.state.destination);
     Alert.alert(
       "Cancel Alarm?",
       "This will cancel your currently running Alarm",
@@ -103,13 +107,13 @@ export default class DetailScreen extends React.Component {
     const { navigation } = this.props;
     var origin = this.state.origin;
     var destination =this.state.destination ;
-    console.log(utilityFunctions.getDistanceFromLatLonInKm(origin.latitude,origin.longitude,destination.latitude,destination.longitude));
-    console.log("State : "+this.state.origin.name+ " "+this.state.destination.name + "distanceToDest : "+this.state.distanceToDest);
+    console.log("State : "+this.state.origin.name+ " "+this.state.destination.name + " distanceToDest : "+this.state.distanceToDest);
     return (
       <View style={styles.mainContainer}>
         <DetailComponent
           origin={origin}
           dest={destination}
+          timeLeft={this.state.timeLeft}
           style={{ flex: 2, padding: 20 }}
         />
         <MapComponent origin={navigation.getParam("fromStation", {name: "Unset"})} destination={navigation.getParam("toStation", {name: "Unset"})} />
@@ -153,7 +157,7 @@ class DetailComponent extends React.Component {
               justifyContent: "space-evenly"
             }}
           >
-            <DisplayField color="white" text="11:00" fSize={20} />
+            <DisplayField color="white" text={this.props.timeLeft} fSize={20} />
             <ProgressComponent color="blue" progress={80} />
           </View>
         </View>

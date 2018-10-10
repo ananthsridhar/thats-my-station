@@ -34,7 +34,7 @@ export default class MapComponent extends React.Component {
   }
 
   updateCameraOverUser() {
-    
+
   }
 
   renderAnnotations() {
@@ -47,7 +47,7 @@ export default class MapComponent extends React.Component {
         <Mapbox.PointAnnotation
           key={station.id}
           id={"" + station.id}
-          coordinate={[station.longitude, station.latitude]}
+          coordinate={station.coordinates}
         >
           <View style={styles.annotationContainer}>
             <View style={styles.annotationFill} />
