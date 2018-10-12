@@ -14,6 +14,7 @@ import {
 import { Icon, Overlay } from "react-native-elements";
 import MapComponent from "./MapComponent.js";
 import utilityFunctions from "../scripts/utilities.js";
+import * as Properties from "../resources/properties.js";
 
 const POLLING_INTERVAL = 5 * 1000;
 
@@ -21,43 +22,50 @@ export default class DetailScreen extends React.Component {
   constructor() {
     super();
     this.onPressGoBack = this.onPressGoBack.bind(this);
-    this.getCurrentLocationDistance = this.getCurrentLocationDistance.bind(this);
+    this.getCurrentLocationDistance = this.getCurrentLocationDistance.bind(
+      this
+    );
     this.state = {
-      origin : {
-        "id": 2,
-        "name": "Chennai Beach",
-        "line_no": 2,
-        "pos_in_line": 0,
-        "latitude": 13.092253,
-        "longitude": 80.292397,
-        "coordinates":[80.292397,13.092253]
+      origin: {
+        id: 2,
+        name: "Chennai Beach",
+        line_no: 2,
+        pos_in_line: 0,
+        latitude: 13.092253,
+        longitude: 80.292397,
+        coordinates: [80.292397, 13.092253]
       },
-      destination :{
-        "id": 4,
-        "name": "Chennai Beach",
-        "line_no": 2,
-        "pos_in_line": 0,
-        "latitude": 13.092253,
-        "longitude": 80.292397,
-        "coordinates":[80.292397,13.092253]
+      destination: {
+        id: 4,
+        name: "Chennai Beach",
+        line_no: 2,
+        pos_in_line: 0,
+        latitude: 13.092253,
+        longitude: 80.292397,
+        coordinates: [80.292397, 13.092253]
       },
-      timeLeft : 0
-    }
+      timeLeft: 0,
+      timerValue: 0
+    };
     utilityFunctions.scriptImportTester();
   }
 
   componentDidMount() {
     BackHandler.addEventListener("hardwareBackPress", this.onPressGoBack);
     console.log("Mounted");
+    console.log(utilityFunctions.getNearestStation([80.271959, 13.052202]));
     const { navigation } = this.props;
-    var orig = navigation.getParam("fromStation", {name: "Unset"});
-    var dest =navigation.getParam("toStation", {name: "Unset"}) ;
+    var orig = navigation.getParam("fromStation", { name: "Unset" });
+    var dest = navigation.getParam("toStation", { name: "Unset" });
     this.setState({
-      origin : orig,
-      destination : dest,
-      distanceToDest : utilityFunctions.getDistanceFromLatLonInKm(orig.coordinates,dest.coordinates),
-      timeLeft : utilityFunctions.getTotalTravelTime(orig,dest)
-    })
+      origin: orig,
+      destination: dest,
+      distanceToDest: utilityFunctions.getDistanceInKm(
+        orig.coordinates,
+        dest.coordinates
+      ),
+      timeLeft: utilityFunctions.getTotalTravelTime(orig, dest)
+    });
     //Initially find out how far to destination
     this.getCurrentLocationDistance();
     //Run function to poll location every five seconds
@@ -68,22 +76,41 @@ export default class DetailScreen extends React.Component {
     BackHandler.removeEventListener("hardwareBackPress", this.onPressGoBack);
     clearInterval(this.state.locTimer);
   }
-
-  distanceIntervaledPing(){
-    let timer = setInterval(()=>{this.getCurrentLocationDistance()},POLLING_INTERVAL);
+  distanceIntervaledPing() {
+    let timer = setInterval(() => {
+      this.tick();
+    }, 1000);
     this.setState({
-      locTimer : timer
-    })
+      locTimer: timer
+    });
   }
 
-  getCurrentLocationDistance(){
-    navigator.geolocation.getCurrentPosition((pos)=>{
-      console.log("Recieved Location : "+pos.coords.latitude);
-      console.log(this.state.timeLeft);
+  tick() {
+    // console.log(this.state.timerValue);
+    this.setState(
+      (prevState, props) => {
+        timerValue: prevState.timerValue++;
+      },
+      () => {
+        this.state.timerValue % 5 === 0
+          ? this.getCurrentLocationDistance()
+          : null;
+      }
+    );
+  }
+
+  getCurrentLocationDistance() {
+    navigator.geolocation.getCurrentPosition(pos => {
+      console.log("Recieved Location : " + pos.coords.latitude);
+      //console.log(this.state.timeLeft);
       this.setState({
-        distanceToDest : utilityFunctions.getDistanceFromLatLonInKm([pos.coords.longitude,pos.coords.latitude],this.state.destination.coordinates)
+        distanceToDest: utilityFunctions.getDistanceInKm(
+          [pos.coords.longitude, pos.coords.latitude],
+          this.state.destination.coordinates
+        ),
+        currentPosition: pos.coords
       });
-    })
+    });
   }
 
   onPressGoBack() {
@@ -106,8 +133,15 @@ export default class DetailScreen extends React.Component {
   render() {
     const { navigation } = this.props;
     var origin = this.state.origin;
-    var destination =this.state.destination ;
-    console.log("State : "+this.state.origin.name+ " "+this.state.destination.name + " distanceToDest : "+this.state.distanceToDest);
+    var destination = this.state.destination;
+    console.log(
+      "State : " +
+        this.state.origin.name +
+        " " +
+        this.state.destination.name +
+        " distanceToDest : " +
+        this.state.distanceToDest
+    );
     return (
       <View style={styles.mainContainer}>
         <DetailComponent
@@ -116,7 +150,10 @@ export default class DetailScreen extends React.Component {
           timeLeft={this.state.timeLeft}
           style={{ flex: 2, padding: 20 }}
         />
-        <MapComponent origin={navigation.getParam("fromStation", {name: "Unset"})} destination={navigation.getParam("toStation", {name: "Unset"})} />
+        <MapComponent
+          origin={navigation.getParam("fromStation", { name: "Unset" })}
+          destination={navigation.getParam("toStation", { name: "Unset" })}
+        />
         <View style={{ flex: 1, backgroundColor: "blue" }}>
           <TouchableOpacity style={styles.button} onPress={this.onPressGoBack}>
             <Text> Go Back </Text>

@@ -1,11 +1,8 @@
 import stationData from "../resources/stationData.json";
-
-const POLLING_INTERVAL = 5 * 1000;
-const STATION_HALT_TIME = 5 * 1000;
-const TIME_BETWEEN_STATIONS = 5 * 1000;
+import * as Properties from "../resources/properties.js";
 
 const utilityFunctions = {
-  getDistanceFromLatLonInKm(coord1,coord2) {
+  getDistanceInKm(coord1,coord2) {
     var R = 6371; // Radius of the earth in km
     var dLat = this.deg2rad(coord2[1] - coord1[1]); // deg2rad below
     var dLon = this.deg2rad(coord2[0] - coord1[0]);
@@ -50,6 +47,18 @@ const utilityFunctions = {
     return stations;
   },
 
+  getNearestStation(currentPostion){
+      let dist = 999.99;
+      let nearest = stationData[0];
+      stationData.map((station,id)=>{
+        thisDist = this.getDistanceInKm(currentPostion,station.coordinates);
+        if(dist > thisDist){
+          nearest = station;dist = thisDist;
+        }
+      })
+      return nearest;
+  },
+
   getStationsBetween(from,to){
     let stations = this.getStationsInLine(to.line_no);
     let stationsBetween = stations.filter((stn)=>{
@@ -65,16 +74,16 @@ const utilityFunctions = {
   },
 
   getTotalTravelTime(from, to) {
-    var dist = this.getDistanceFromLatLonInKm(
+    var dist = this.getDistanceInKm(
       from.latitude,
       from.longitude,
       to.latitude,
       to.longitude
     );
     var totalTime =
-      (STATION_HALT_TIME + TIME_BETWEEN_STATIONS) *
+      (Properties.STATION_HALT_TIME + Properties.TIME_BETWEEN_STATIONS) *
         this.getStationsBetween(from,to).length +
-      TIME_BETWEEN_STATIONS / 2;
+      Properties.TIME_BETWEEN_STATIONS / 2;
       console.log(totalTime/(100*60)+" m");
       return (totalTime/(100*60)).toFixed(2);
   },
