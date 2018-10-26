@@ -16,6 +16,8 @@ import OverlayComponent from "./OverlayComponent.js";
 
 import station_data from "../resources/stationData.json";
 import utilityFunctions from "../scripts/utilities.js";
+import AlarmNotification from "../native_modules/AlarmNotification"
+import ToastExample from "../native_modules/ToastModule";
 
 export default class FormComponent extends React.Component {
   constructor() {
@@ -60,6 +62,7 @@ export default class FormComponent extends React.Component {
 
   onPress(e) {
     //console.log(e);
+    AlarmNotification.show('AWESOEM!',AlarmNotification.SHORT);
     if (e === "from") {
       this.setState({
         modalData: this.state.stationData,
