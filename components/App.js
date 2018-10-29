@@ -6,7 +6,7 @@ import { createStackNavigator } from "react-navigation";
 
 export default class App extends React.Component {
   render() {
-    return <RootStack />;
+    return <RootStack persistenceKey={"NavigationState"}/>;
   }
 }
 

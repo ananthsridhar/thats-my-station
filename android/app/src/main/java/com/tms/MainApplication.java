@@ -1,6 +1,11 @@
 package com.tms;
 
 import android.app.Application;
+import android.app.NotificationManager;
+import android.app.NotificationChannel;
+import android.content.Context;
+import android.graphics.Color;
+import android.os.Build;
 
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
@@ -48,5 +53,27 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+    createNotificationChannel();
+
+  }
+
+  private void createNotificationChannel() {
+    // Create the NotificationChannel, but only on API 26+ because
+    // the NotificationChannel class is new and not in the support library
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+      CharSequence name = "train_alarm";
+      String description = "Alarm Notif for Station App";
+      int importance = NotificationManager.IMPORTANCE_LOW;
+      NotificationChannel channel = new NotificationChannel("train_alarm", name, importance);
+      channel.setDescription(description);
+
+      //channel.enableVibration(true);
+      //channel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+
+      // Register the channel with the system; you can't change the importance
+      // or other notification behaviors after this
+      NotificationManager notificationManager = getSystemService(NotificationManager.class);
+      notificationManager.createNotificationChannel(channel);
+    }
   }
 }

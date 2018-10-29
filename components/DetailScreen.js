@@ -15,6 +15,7 @@ import { Icon, Overlay } from "react-native-elements";
 import MapComponent from "./MapComponent.js";
 import utilityFunctions from "../scripts/utilities.js";
 import * as Properties from "../resources/properties.js";
+import AlarmNotification from "../native_modules/AlarmNotification";
 
 const POLLING_INTERVAL = 5 * 1000;
 
@@ -110,6 +111,7 @@ export default class DetailScreen extends React.Component {
         ),
         currentPosition: pos.coords
       });
+        AlarmNotification.showNotification(this.state.origin.name + " TO " + this.state.destination.name);
     });
   }
 
@@ -123,7 +125,7 @@ export default class DetailScreen extends React.Component {
           onPress: () => console.log("cancel"),
           style: "cancel"
         },
-        { text: "Yeah,Cool", onPress: () => this.props.navigation.goBack() }
+        { text: "Yeah,Cool", onPress: () => {AlarmNotification.cancelNotification();this.props.navigation.goBack();} }
       ]
     );
     // this.props.navigation.goBack();

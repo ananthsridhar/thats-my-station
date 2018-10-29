@@ -62,7 +62,6 @@ export default class FormComponent extends React.Component {
 
   onPress(e) {
     //console.log(e);
-    AlarmNotification.show('AWESOEM!',AlarmNotification.SHORT);
     if (e === "from") {
       this.setState({
         modalData: this.state.stationData,
@@ -109,6 +108,7 @@ export default class FormComponent extends React.Component {
         fromStation: this.state.fromStation,
         toStation: this.state.toStation
       });
+      AlarmNotification.showNotification(this.state.fromStation.name + " TO " + this.state.toStation.name);
     } else {
       Alert.alert("Select Stations First");
     }
