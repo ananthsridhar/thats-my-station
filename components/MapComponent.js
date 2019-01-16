@@ -15,7 +15,8 @@ import { Icon, Overlay } from "react-native-elements";
 import Mapbox from "@mapbox/react-native-mapbox-gl";
 
 import station_data from "../resources/stationData.json";
-
+import {StatusBar} from 'react-native';
+var {height, width} = Dimensions.get('window');
 Mapbox.setAccessToken(
   "pk.eyJ1IjoibmFudGhzcmVlMjIiLCJhIjoiY2psZzZ3enliMTB0czNxcWc5OW82c3VsZCJ9.1OhBvdJmJn5AjBs4w71Luw"
 );
@@ -65,13 +66,10 @@ export default class MapComponent extends React.Component {
     return (
       <View
         style={{
-          flex: 3,
-          borderRadius: 20,
-          borderColor: "green",
-          borderWidth: 5,
+          height : height-StatusBar.currentHeight,
+          width : width,
           overflow: "hidden",
-          margin: 20,
-          marginTop: 0
+          position: "absolute"
         }}
       >
         <Mapbox.MapView

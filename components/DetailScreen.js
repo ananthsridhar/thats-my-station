@@ -111,7 +111,7 @@ export default class DetailScreen extends React.Component {
         ),
         currentPosition: pos.coords
       });
-        AlarmNotification.showNotification(this.state.origin.name + " TO " + this.state.destination.name);
+      AlarmNotification.showNotification(this.state.origin.name + " TO " + this.state.destination.name);
     });
   }
 
@@ -125,7 +125,7 @@ export default class DetailScreen extends React.Component {
           onPress: () => console.log("cancel"),
           style: "cancel"
         },
-        { text: "Yeah,Cool", onPress: () => {AlarmNotification.cancelNotification();this.props.navigation.goBack();} }
+        { text: "Yeah,Cool", onPress: () => { AlarmNotification.cancelNotification(); this.props.navigation.goBack(); } }
       ]
     );
     // this.props.navigation.goBack();
@@ -134,33 +134,27 @@ export default class DetailScreen extends React.Component {
 
   render() {
     const { navigation } = this.props;
-    var origin = this.state.origin;
-    var destination = this.state.destination;
-    console.log(
-      "State : " +
-        this.state.origin.name +
-        " " +
-        this.state.destination.name +
-        " distanceToDest : " +
-        this.state.distanceToDest
-    );
+    let origin = this.state.origin;
+    let destination = this.state.destination;
+
     return (
+      
       <View style={styles.mainContainer}>
+        <MapComponent
+          origin={navigation.getParam("fromStation", { name: "Unset" })}
+          destination={navigation.getParam("toStation", { name: "Unset" })}
+       ></MapComponent>
         <DetailComponent
           origin={origin}
           dest={destination}
           timeLeft={this.state.timeLeft}
           style={{ flex: 2, padding: 20 }}
         />
-        <MapComponent
-          origin={navigation.getParam("fromStation", { name: "Unset" })}
-          destination={navigation.getParam("toStation", { name: "Unset" })}
-        />
-        <View style={{ flex: 1, backgroundColor: "blue" }}>
+        
           <TouchableOpacity style={styles.button} onPress={this.onPressGoBack}>
             <Text> Go Back </Text>
           </TouchableOpacity>
-        </View>
+        
       </View>
     );
   }
@@ -254,11 +248,11 @@ const styles = StyleSheet.create({
     flex: 1
   },
   button: {
-    flex: 1,
+    height : 60,
     justifyContent: "center",
     alignItems: "center",
-    // backgroundColor: '#DDDDDD',
-    padding: 5,
+    backgroundColor: '#DDDDDD',
+    padding: 2,
     borderRadius: 50
   },
   mainContainer: {
