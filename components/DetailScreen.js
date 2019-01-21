@@ -138,23 +138,25 @@ export default class DetailScreen extends React.Component {
     let destination = this.state.destination;
 
     return (
-      
+
       <View style={styles.mainContainer}>
         <MapComponent
           origin={navigation.getParam("fromStation", { name: "Unset" })}
           destination={navigation.getParam("toStation", { name: "Unset" })}
-       ></MapComponent>
-        <DetailComponent
-          origin={origin}
-          dest={destination}
-          timeLeft={this.state.timeLeft}
-          style={{ flex: 2, padding: 20 }}
-        />
-        
+        ></MapComponent>
+        <View style={{ flex: 1 }}>
+          <DetailComponent
+            origin={origin}
+            dest={destination}
+            timeLeft={this.state.timeLeft}
+          />
+        </View>
+        <View style={{ flex: 2, justifyContent: "flex-end" }}>
           <TouchableOpacity style={styles.button} onPress={this.onPressGoBack}>
             <Text> Go Back </Text>
           </TouchableOpacity>
-        
+        </View>
+
       </View>
     );
   }
@@ -173,7 +175,7 @@ class DetailComponent extends React.Component {
     const origin = this.props.origin;
     const destination = this.props.dest;
     return (
-      <View style={styles.container}>
+      <View style={styles.displayContainer}>
         <View style={{ flex: 1 }}>
           <View style={{ flex: 1, flexDirection: "row" }}>
             <DisplayField color="white" text={origin.name} fSize={15} />
@@ -182,6 +184,25 @@ class DetailComponent extends React.Component {
               text={"To " + destination.name}
               fSize={15}
             />
+          </View>
+          <View style={{ flex: 1, flexDirection: "row", justifyContent: "center" }}>
+            <ProgressComponent color="blue" progress={80}>
+
+            </ProgressComponent>
+            <View style={{
+              flex: 1, flexDirection: "row",
+              position: "absolute", alignSelf: "center", justifyContent: "center", alignContent: "space-between",
+              backgroundColor: 'grey',
+              borderRadius: 50, paddingLeft: 40,paddingRight: 40,
+              height: 40
+            }}>
+                <DisplayField color="white" text={origin.name} fSize={15} />
+                <DisplayField
+                  color="white"
+                  text={"To " + destination.name}
+                  fSize={15}
+                />
+            </View>
           </View>
           <View
             style={{
@@ -206,12 +227,13 @@ class DisplayField extends React.Component {
 
   render() {
     const style = {
+      flex:1,
       color: this.props.color,
       fontSize: this.props.fSize,
-      padding: 10
+      marginLeft: 10
     };
     return (
-      <View style={{ flex: 1, height: 50, flexDirection: "row" }}>
+      <View style={{ flex: 1, height: 50, flexDirection: "row", justifyContent: "center", alignContent: "center" }}>
         <Text style={style}>{this.props.text}</Text>
       </View>
     );
@@ -223,8 +245,8 @@ class ProgressComponent extends React.Component {
     const style = {
       backgroundColor: this.props.color,
       flex: this.props.progress * 0.01,
-      borderRadius: 10,
-      height: 50
+      borderRadius: 50
+
     };
     return (
       <View
@@ -232,7 +254,7 @@ class ProgressComponent extends React.Component {
           flex: 1,
           flexDirection: "row",
           backgroundColor: "white",
-          borderRadius: 10,
+          borderRadius: 50,
           height: 50
         }}
       >
@@ -243,17 +265,19 @@ class ProgressComponent extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 40,
-    flex: 1
+  displayContainer: {
+    padding: 20,
+    flex: 1,
+    backgroundColor: 'rgba(157, 162, 175, 0.89)'
   },
   button: {
-    height : 60,
+    height: 60,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: '#DDDDDD',
+    backgroundColor: '#E55C52',
     padding: 2,
-    borderRadius: 50
+    borderRadius: 50,
+    marginBottom: 5
   },
   mainContainer: {
     flex: 1,
