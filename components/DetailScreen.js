@@ -16,7 +16,7 @@ import MapComponent from "./MapComponent.js";
 import utilityFunctions from "../scripts/utilities.js";
 import * as Properties from "../resources/properties.js";
 import AlarmNotification from "../native_modules/AlarmNotification";
-
+var { height, width } = Dimensions.get('window');
 const POLLING_INTERVAL = 5 * 1000;
 
 export default class DetailScreen extends React.Component {
@@ -61,6 +61,7 @@ export default class DetailScreen extends React.Component {
     this.setState({
       origin: orig,
       destination: dest,
+      currentStation: orig,
       distanceToDest: utilityFunctions.getDistanceInKm(
         orig.coordinates,
         dest.coordinates
@@ -76,7 +77,9 @@ export default class DetailScreen extends React.Component {
   componentWillUnmount() {
     BackHandler.removeEventListener("hardwareBackPress", this.onPressGoBack);
     clearInterval(this.state.locTimer);
+    this.props.navigation.navigate("Home");
   }
+
   distanceIntervaledPing() {
     let timer = setInterval(() => {
       this.tick();
@@ -103,15 +106,19 @@ export default class DetailScreen extends React.Component {
   getCurrentLocationDistance() {
     navigator.geolocation.getCurrentPosition(pos => {
       console.log("Recieved Location : " + pos.coords.latitude);
+      let nextStation = utilityFunctions.getNextStation(this.state.currentStation, this.state.destination, pos);
+      console.log(nextStation);
       //console.log(this.state.timeLeft);
       this.setState({
         distanceToDest: utilityFunctions.getDistanceInKm(
           [pos.coords.longitude, pos.coords.latitude],
           this.state.destination.coordinates
         ),
-        currentPosition: pos.coords
+        currentPosition: pos.coords,
+        currentStation: (utilityFunctions.getDistanceInKm([pos.coords.longitude, pos.coords.latitude], nextStation.coordinates) < 0.2 ? nextStation : this.state.currentStation)
       });
       AlarmNotification.showNotification(this.state.origin.name + " TO " + this.state.destination.name);
+      console.log(this.state);
     });
   }
 
@@ -144,13 +151,11 @@ export default class DetailScreen extends React.Component {
           origin={navigation.getParam("fromStation", { name: "Unset" })}
           destination={navigation.getParam("toStation", { name: "Unset" })}
         ></MapComponent>
-        <View style={{ flex: 1 }}>
-          <DetailComponent
-            origin={origin}
-            dest={destination}
-            timeLeft={this.state.timeLeft}
-          />
-        </View>
+        <DetailComponent
+          origin={origin}
+          dest={destination}
+          timeLeft={this.state.timeLeft}
+        />
         <View style={{ flex: 2, justifyContent: "flex-end" }}>
           <TouchableOpacity style={styles.button} onPress={this.onPressGoBack}>
             <Text> Go Back </Text>
@@ -175,17 +180,38 @@ class DetailComponent extends React.Component {
     const origin = this.props.origin;
     const destination = this.props.dest;
     return (
+      // <View style={{flex:1,justifyContent:"flex-start"}}>
+
+      //   <View style={{height:height*0.1,width:width*0.8,backgroundColor:'black',alignSelf:"center",borderBottomLeftRadius:25,borderBottomRightRadius:25}}>
+      //       <View style={{flex:0.5,backgroundColor:'green',borderBottomLeftRadius:25,borderBottomRightRadius:25}} />
+      //       <View style={{position:"absolute",flexDirection:"row",alignContent:"center",justifyContent:"space-between",height:height*0.095,width:width*0.78,backgroundColor:'yellow',alignSelf:"center",borderBottomLeftRadius:25,borderBottomRightRadius:25}}>
+      //         <Text>Chennai</Text>
+      //         <Text>Cheskldhasj</Text>
+      //       </View>
+      //   </View>
+
+      // </View>
       <View style={styles.displayContainer}>
         <View style={{ flex: 1 }}>
-          <View style={{ flex: 1, flexDirection: "row" }}>
-            <DisplayField color="white" text={origin.name} fSize={15} />
-            <DisplayField
-              color="white"
-              text={"To " + destination.name}
-              fSize={15}
-            />
+
+          <View style={{
+            borderColor: "#90dae5",
+            borderWidth: 5,
+            borderStyle: "solid",
+            flex: 1, justifyContent: "space-between",
+            backgroundColor: 'rgba(157, 162, 175, 0.89)'
+          }}>
+            <View style={{ height: 50, flexDirection: "row" }}>
+              <DisplayField color="white" text={origin.name} fSize={15} />
+              <DisplayField
+                color="white"
+                text={"To " + destination.name}
+                fSize={15}
+              />
+            </View>
+            <ProgressBarComponent color="green" progress={80}></ProgressBarComponent>
           </View>
-          <View style={{ flex: 1, flexDirection: "row", justifyContent: "center" }}>
+          {/* <View style={{ flex: 1, flexDirection: "row", justifyContent: "center" }}>
             <ProgressComponent color="blue" progress={80}>
 
             </ProgressComponent>
@@ -193,26 +219,29 @@ class DetailComponent extends React.Component {
               flex: 1, flexDirection: "row",
               position: "absolute", alignSelf: "center", justifyContent: "center", alignContent: "space-between",
               backgroundColor: 'grey',
-              borderRadius: 50, paddingLeft: 40,paddingRight: 40,
+              borderRadius: 50, paddingLeft: 40, paddingRight: 40,
               height: 40
             }}>
-                <DisplayField color="white" text={origin.name} fSize={15} />
-                <DisplayField
-                  color="white"
-                  text={"To " + destination.name}
-                  fSize={15}
-                />
+              <DisplayField color="white" text={origin.name} fSize={15} />
+              <View></View>
+              <DisplayField
+                color="white"
+                text={"To " + destination.name}
+                fSize={15}
+              />
             </View>
-          </View>
+          </View> */}
           <View
             style={{
-              flex: 1,
+              width: width * 0.3, height: 80,
+              backgroundColor: 'green',
               flexDirection: "row",
-              justifyContent: "space-evenly"
-            }}
-          >
+              justifyContent: "center",
+              alignItems: "center",
+              alignSelf: "center"
+            }}>
             <DisplayField color="white" text={this.props.timeLeft} fSize={20} />
-            <ProgressComponent color="blue" progress={80} />
+            {/* <ProgressComponent color="blue" progress={80} /> */}
           </View>
         </View>
       </View>
@@ -227,13 +256,11 @@ class DisplayField extends React.Component {
 
   render() {
     const style = {
-      flex:1,
       color: this.props.color,
-      fontSize: this.props.fSize,
-      marginLeft: 10
+      fontSize: this.props.fSize
     };
     return (
-      <View style={{ flex: 1, height: 50, flexDirection: "row", justifyContent: "center", alignContent: "center" }}>
+      <View style={{}}>
         <Text style={style}>{this.props.text}</Text>
       </View>
     );
@@ -264,11 +291,32 @@ class ProgressComponent extends React.Component {
   }
 }
 
+class ProgressBarComponent extends React.Component {
+  render() {
+    const style = {
+      backgroundColor: this.props.color,
+      flex: this.props.progress * 0.01
+
+    };
+    return (
+      <View
+        style={{
+          flexDirection: "row",
+          backgroundColor: "white",
+          height: 10
+        }}
+      >
+        <View style={style} />
+      </View>
+    );
+  }
+}
+
 const styles = StyleSheet.create({
   displayContainer: {
-    padding: 20,
+    padding: 10,
     flex: 1,
-    backgroundColor: 'rgba(157, 162, 175, 0.89)'
+    elevation: 2
   },
   button: {
     height: 60,
@@ -281,7 +329,13 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     flex: 1,
-    padding: 20,
-    backgroundColor: "#f43"
+    padding: 10,
+    paddingBottom: 20
+  },
+  detailContainer: {
+    // 10px outset 
+    borderColor: "#90dae5",
+    borderWidth: 10,
+    borderStyle: "solid",
   }
 });

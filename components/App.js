@@ -6,7 +6,7 @@ import { createStackNavigator } from "react-navigation";
 
 export default class App extends React.Component {
   render() {
-    return <RootStack persistenceKey={"NavigationState"}/>;
+    return <RootStack/>;
   }
 }
 
@@ -16,6 +16,7 @@ const RootStack = createStackNavigator(
     Details: DetailScreen
   },
   {
+    initialRouteName: "Home",
     headerMode: "none"
   }
 );
