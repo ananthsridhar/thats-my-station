@@ -195,11 +195,11 @@ class DetailComponent extends React.Component {
         <View style={{ flex: 1 }}>
 
           <View style={{
-            borderColor: "#90dae5",
+            borderColor: "#9EA3B0",
             borderWidth: 5,
             borderStyle: "solid",
             flex: 1, justifyContent: "space-between",
-            backgroundColor: 'rgba(157, 162, 175, 0.89)'
+            backgroundColor: '#0D1F2D'
           }}>
             <View style={{ height: 50, flexDirection: "row" }}>
               <DisplayField color="white" text={origin.name} fSize={15} />
