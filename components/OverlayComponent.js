@@ -92,11 +92,12 @@ export default class OverlayComponent extends React.Component {
                 />
                 <Text style={{ height: 35,color:"white",padding:8,borderBottomColor:"white",borderBottomWidth:2,borderTopColor:"white",borderTopWidth:2,fontStyle:'italic'  }}>All Stations</Text>
             {this.state.stationList.map((data, id) => {
+              
               return (
                 <TouchableListItem
                   key={id}
                   sid={data.id}
-                  text={data.name}
+                  text={data.name.toUpperCase()}
                   selectItem={this.selectedItemReturn}
                 />
               );

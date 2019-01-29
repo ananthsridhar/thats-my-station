@@ -11,9 +11,9 @@ import {
   ScrollView,
   PermissionsAndroid
 } from "react-native";
-import { Icon, Overlay } from "react-native-elements";
+import { Icon } from 'react-native-elements'
 import OverlayComponent from "./OverlayComponent.js";
-
+var { height, width } = Dimensions.get('window');
 import station_data from "../resources/stationData.json";
 import utilityFunctions from "../scripts/utilities.js";
 import AlarmNotification from "../native_modules/AlarmNotification"
@@ -122,49 +122,44 @@ export default class FormComponent extends React.Component {
           style={{
             width: Dimensions.get("window").width,
             height: Dimensions.get("window").height,
-            backgroundColor: "powderblue"
+            backgroundColor: "#0D1F2D"
           }}
         >
-          <View style={{ flex: 1 }}>
-            <Text>Hello</Text>
+          <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+            <Text style={{ color: 'white', fontSize: 30 }}>THATS MY STATION</Text>
           </View>
-          <View style={{ flex: 1, padding: 40 }}>
-            <View style={{ padding: 40 }}>
+          <View style={{ flex: 1, padding: 20, justifyContent: "space-evenly" }}>
+            <View style={{ padding: 20 }}>
               <TouchableOpacity
                 style={styles.button}
                 onPress={() => this.onPress("from")}
                 name="from"
               >
-                <View
-                  style={{ flexDirection: "row", justifyContent: "flex-end" }}
-                >
-                  <Text>
-                    {" "}
-                    {this.state.fromStation == ""
-                      ? "SELECT ORIGIN"
-                      : this.state.fromStation.name}{" "}
-                  </Text>
-                  <Icon name="rowing" />
-                </View>
+                <Text style={styles.touchText}>
+                  {" "}
+                  {this.state.fromStation == ""
+                    ? "FROM"
+                    : this.state.fromStation.name.toUpperCase()}{" "}
+                </Text>
               </TouchableOpacity>
             </View>
-            <View style={{ padding: 40 }}>
+            <View style={{ padding: 20 }}>
               <TouchableOpacity
                 style={styles.button}
                 onPress={() => this.onPress("to")}
                 name="to"
               >
-                <Text>
+                <Text style={styles.touchText}>
                   {" "}
                   {this.state.toStation == ""
-                    ? "SELECT DESTINATION"
-                    : this.state.toStation.name}{" "}
+                    ? "TO"
+                    : this.state.toStation.name.toUpperCase()}{" "}
                 </Text>
               </TouchableOpacity>
             </View>
           </View>
-          <View style={{ flex: 1 }}>
-            <Button onPress={this.onPressGo} title="Go" color="#841584" />
+          <View style={styles.goButton}>
+            <Button style={{ borderRadius: 50, height: 50 }} onPress={this.onPressGo} title="Go" color="#841584" />
           </View>
         </View>
         <OverlayComponent
@@ -186,16 +181,29 @@ export default class FormComponent extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f43",
+    backgroundColor: "#5D737E",
     alignItems: "center",
     justifyContent: "center"
   },
   button: {
-    alignItems: "center",
-    // backgroundColor: '#DDDDDD',
+    backgroundColor: '#173851',
     padding: 5,
-    borderRadius: 4,
-    borderBottomWidth: 2,
-    borderBottomColor: "#d6d7da"
+    borderWidth: 2,
+    borderBottomColor: "#d6d7da",
+    flexDirection: "row",
+    justifyContent: "center",
+    height: 50,
+    alignContent: "center",
+    alignItems: "center"
+  },
+  goButton: {
+    flex: 1,
+    width: width * 0.8,
+    height: 50,
+    alignSelf: "center",
+    justifyContent: "center"
+  },
+  touchText: {
+    color: 'white'
   }
 });
