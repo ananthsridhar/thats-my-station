@@ -75,6 +75,8 @@ const utilityFunctions = {
     return stationsBetween;
   },
 
+
+  //Return travel time in seconds between two given stations
   getTotalTravelTime(from, to) {
     var dist = this.getDistanceInKm(
       from.latitude,
@@ -86,8 +88,8 @@ const utilityFunctions = {
       (Properties.STATION_HALT_TIME + Properties.TIME_BETWEEN_STATIONS) *
       this.getStationsBetween(from, to).length +
       Properties.TIME_BETWEEN_STATIONS / 2;
-    console.log(totalTime / (100 * 60) + " m");
-    return (totalTime / (100 * 60)).toFixed(2);
+    console.log(totalTime/60 + " m");
+    return totalTime;
   },
 
   getNextStation(from,to,currentPostion){

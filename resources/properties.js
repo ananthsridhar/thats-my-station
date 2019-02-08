@@ -1,5 +1,5 @@
 
-
-export const POLLING_INTERVAL = 5 * 1000;
-export const STATION_HALT_TIME = 5 * 1000;
-export const TIME_BETWEEN_STATIONS = 5 * 1000;
+//All times in seconds
+export const POLLING_INTERVAL = 10;
+export const STATION_HALT_TIME = 15;
+export const TIME_BETWEEN_STATIONS = 140;

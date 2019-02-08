@@ -17,7 +17,7 @@ import utilityFunctions from "../scripts/utilities.js";
 import * as Properties from "../resources/properties.js";
 import AlarmNotification from "../native_modules/AlarmNotification";
 var { height, width } = Dimensions.get('window');
-const POLLING_INTERVAL = 5 * 1000;
+// const POLLING_INTERVAL = 5 * 1000;
 
 export default class DetailScreen extends React.Component {
   constructor() {
@@ -26,6 +26,7 @@ export default class DetailScreen extends React.Component {
     this.getCurrentLocationDistance = this.getCurrentLocationDistance.bind(
       this
     );
+    this.getProgressMade = this.getProgressMade.bind(this);
     this.state = {
       origin: {
         id: 2,
@@ -53,7 +54,7 @@ export default class DetailScreen extends React.Component {
 
   componentDidMount() {
     BackHandler.addEventListener("hardwareBackPress", this.onPressGoBack);
-    console.log("Mounted");
+    //console.log("Mounted");
     console.log(utilityFunctions.getNearestStation([80.271959, 13.052202]));
     const { navigation } = this.props;
     var orig = navigation.getParam("fromStation", { name: "Unset" });
@@ -77,7 +78,6 @@ export default class DetailScreen extends React.Component {
   componentWillUnmount() {
     BackHandler.removeEventListener("hardwareBackPress", this.onPressGoBack);
     clearInterval(this.state.locTimer);
-    this.props.navigation.navigate("Home");
   }
 
   distanceIntervaledPing() {
@@ -93,10 +93,13 @@ export default class DetailScreen extends React.Component {
     // console.log(this.state.timerValue);
     this.setState(
       (prevState, props) => {
-        timerValue: prevState.timerValue++;
+        return {
+          timerValue: prevState.timerValue++,
+          timeLeft: prevState.timeLeft - prevState.timerValue
+        }
       },
       () => {
-        this.state.timerValue % 5 === 0
+        this.state.timerValue % Properties.POLLING_INTERVAL === 0
           ? this.getCurrentLocationDistance()
           : null;
       }
@@ -117,9 +120,22 @@ export default class DetailScreen extends React.Component {
         currentPosition: pos.coords,
         currentStation: (utilityFunctions.getDistanceInKm([pos.coords.longitude, pos.coords.latitude], nextStation.coordinates) < 0.2 ? nextStation : this.state.currentStation)
       });
-      AlarmNotification.showNotification(this.state.origin.name + " TO " + this.state.destination.name);
-      console.log(this.state);
+      AlarmNotification.showNotification(this.formatTimeLeft() + "remaining " + this.state.origin.name + " TO " + this.state.destination.name);      
     });
+  }
+
+  formatTimeLeft() {
+    return Math.floor(this.state.timeLeft / 60) + ':' + (this.state.timeLeft % 60 < 10 ? '0' + (this.state.timeLeft % 60) : this.state.timeLeft % 60);
+  }
+
+  getProgressMade() {
+    let progress = 0
+    if (this.state.currentStation != undefined) {
+      let total = utilityFunctions.getStationsBetween(this.state.origin, this.state.destination).length;
+      let present = utilityFunctions.getStationsBetween(this.state.origin, this.state.currentStation).length;
+      progress = (present / total) * 100;
+    }
+    return progress;
   }
 
   onPressGoBack() {
@@ -143,7 +159,6 @@ export default class DetailScreen extends React.Component {
     const { navigation } = this.props;
     let origin = this.state.origin;
     let destination = this.state.destination;
-
     return (
 
       <View style={styles.mainContainer}>
@@ -154,7 +169,8 @@ export default class DetailScreen extends React.Component {
         <DetailComponent
           origin={origin}
           dest={destination}
-          timeLeft={this.state.timeLeft}
+          timeLeft={this.formatTimeLeft()}
+          progressMade={this.getProgressMade()}
         />
         <View style={{ flex: 2, justifyContent: "flex-end" }}>
           <TouchableOpacity style={styles.button} onPress={this.onPressGoBack}>
@@ -209,7 +225,7 @@ class DetailComponent extends React.Component {
                 fSize={15}
               />
             </View>
-            <ProgressBarComponent color="green" progress={80}></ProgressBarComponent>
+            <ProgressBarComponent color="green" progress={this.props.progressMade}></ProgressBarComponent>
           </View>
           {/* <View style={{ flex: 1, flexDirection: "row", justifyContent: "center" }}>
             <ProgressComponent color="blue" progress={80}>
