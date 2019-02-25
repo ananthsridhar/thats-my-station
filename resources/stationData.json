@@ -174,7 +174,7 @@
     "id": 19,
     "name": "Perungudi",
     "line_no": 1,
-    "pos_in_line": 10,
+    "pos_in_line": 16,
     "latitude": 12.975453,
     "longitude": 80.231525,
     "coordinates": [80.231525,12.975453]
@@ -184,7 +184,7 @@
     "id": 20,
     "name": "Velachery",
     "line_no": 1,
-    "pos_in_line": 10,
+    "pos_in_line": 17,
     "latitude": 12.967304,
     "longitude": 80.21946,
     "coordinates": [80.21946,12.967304]        

@@ -26,7 +26,9 @@ export default class DetailScreen extends React.Component {
     this.getCurrentLocationDistance = this.getCurrentLocationDistance.bind(
       this
     );
+    this.switchToNextStation = this.switchToNextStation.bind(this)
     this.getProgressMade = this.getProgressMade.bind(this);
+    this.arrivalSetup = this.arrivalSetup.bind(this);
     this.state = {
       origin: {
         id: 2,
@@ -55,7 +57,7 @@ export default class DetailScreen extends React.Component {
   componentDidMount() {
     BackHandler.addEventListener("hardwareBackPress", this.onPressGoBack);
     //console.log("Mounted");
-    console.log(utilityFunctions.getNearestStation([80.271959, 13.052202]));
+    // console.log(utilityFunctions.getNearestStation([80.271959, 13.052202]));
     const { navigation } = this.props;
     var orig = navigation.getParam("fromStation", { name: "Unset" });
     var dest = navigation.getParam("toStation", { name: "Unset" });
@@ -106,22 +108,54 @@ export default class DetailScreen extends React.Component {
     );
   }
 
+
+  //NOTES : Implement such that timer starts only when speed > 0, one time, when leaving origin station
   getCurrentLocationDistance() {
     navigator.geolocation.getCurrentPosition(pos => {
-      console.log("Recieved Location : " + pos.coords.latitude);
+      // console.log("Recieved Location : ");
+      // console.log(pos.coords);
       let nextStation = utilityFunctions.getNextStation(this.state.currentStation, this.state.destination, pos);
-      console.log(nextStation);
+      // console.log(nextStation);
+
       //console.log(this.state.timeLeft);
-      this.setState({
-        distanceToDest: utilityFunctions.getDistanceInKm(
-          [pos.coords.longitude, pos.coords.latitude],
-          this.state.destination.coordinates
-        ),
-        currentPosition: pos.coords,
-        currentStation: (utilityFunctions.getDistanceInKm([pos.coords.longitude, pos.coords.latitude], nextStation.coordinates) < 0.2 ? nextStation : this.state.currentStation)
+      let distToNext = utilityFunctions.getDistanceInKm([pos.coords.latitude, pos.coords.longitude], nextStation.coordinates);
+      // console.log(distToNext);
+      nextStation = distToNext < 0.2 ? this.switchToNextStation(nextStation) : this.state.currentStation;
+      this.setState(state => {
+        return {
+          distanceToDest: utilityFunctions.getDistanceInKm(
+            [pos.coords.latitude, pos.coords.longitude],
+            state.destination.coordinates
+          ),
+          currentPosition: pos.coords,
+          currentStation: nextStation
+        }
       });
-      AlarmNotification.showNotification(this.formatTimeLeft() + "remaining " + this.state.origin.name + " TO " + this.state.destination.name);      
+      AlarmNotification.showNotification(this.formatTimeLeft() + "remaining " +
+        this.state.origin.name + " TO " + this.state.destination.name);
     });
+  }
+
+  arrivalSetup(){
+    console.log("Destination!");      
+    AlarmNotification.showAlarmNotification();
+    clearInterval(this.state.locTimer);
+  }
+
+  switchToNextStation(next) {
+
+    if (next.name === this.state.destination.name) {
+     this.arrivalSetup();
+    }
+    else {
+      console.log("Switching");
+      this.setState(state => {
+        return {
+          timeLeft: utilityFunctions.getTotalTravelTime(next, state.destination)
+        }
+      })
+    }
+    return next;
   }
 
   formatTimeLeft() {
@@ -159,6 +193,7 @@ export default class DetailScreen extends React.Component {
     const { navigation } = this.props;
     let origin = this.state.origin;
     let destination = this.state.destination;
+    let current = this.state.currentStation;
     return (
 
       <View style={styles.mainContainer}>
@@ -169,6 +204,7 @@ export default class DetailScreen extends React.Component {
         <DetailComponent
           origin={origin}
           dest={destination}
+          current={current}
           timeLeft={this.formatTimeLeft()}
           progressMade={this.getProgressMade()}
         />
@@ -184,16 +220,23 @@ export default class DetailScreen extends React.Component {
 }
 
 class DetailComponent extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentStation : props.current
+    }
   }
 
   componentDidMount() {
     //this.getAllData();
+    // console.log(this.props.current.name);
+    // console.log(this.props.current);
   }
 
-  render() {
+   render() {
     const origin = this.props.origin;
+    
+    const currName = this.props.current || {name :''};
     const destination = this.props.dest;
     return (
       // <View style={{flex:1,justifyContent:"flex-start"}}>
@@ -221,7 +264,12 @@ class DetailComponent extends React.Component {
               <DisplayField color="white" text={origin.name} fSize={15} />
               <DisplayField
                 color="white"
-                text={"To " + destination.name}
+                text={" Via "+currName.name}
+                fSize={15}
+              />
+              <DisplayField
+                color="white"
+                text={" To " + destination.name}
                 fSize={15}
               />
             </View>

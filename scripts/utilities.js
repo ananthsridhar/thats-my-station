@@ -3,24 +3,42 @@ import * as Properties from "../resources/properties.js";
 
 const utilityFunctions = {
   getDistanceInKm(coord1, coord2) {
-    var R = 6371; // Radius of the earth in km
-    var dLat = this.deg2rad(coord2[1] - coord1[1]); // deg2rad below
-    var dLon = this.deg2rad(coord2[0] - coord1[0]);
-    var a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(this.deg2rad(coord1[1])) *
-      Math.cos(this.deg2rad(coord2[1])) *
-      Math.sin(dLon / 2) *
-      Math.sin(dLon / 2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c; // Distance in km
+    // var R = 6371; // Radius of the earth in km
+    // var dLat = this.deg2rad(coord2[1] - coord1[1]); // deg2rad below
+    // var dLon = this.deg2rad(coord2[0] - coord1[0]);
+    // var a =
+    //   Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    //   Math.cos(this.deg2rad(coord1[1])) *
+    //   Math.cos(this.deg2rad(coord2[1])) *
+    //   Math.sin(dLon / 2) *
+    //   Math.sin(dLon / 2);
+    // var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    // var d = R * c; // Distance in km
     // console.log("Dist : "+d);
-    return d;
-   
+    // return d; 
+
+    var R = 6371; // km
+      var dLat = this.toRad(coord2[0]-coord1[0]);
+      var dLon = this.toRad(coord2[1]-coord1[1]);
+      var lat1 = this.toRad(coord1[0]);
+      var lat2 = this.toRad(coord2[0]);
+
+      var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+      var d = R * c;
+      // console.log("Dist : "+d);
+      return d;
+
+  },
+  // Converts numeric degrees to radians
+  toRad(Value) 
+  {
+      return Value * Math.PI / 180;
   },
 
   deg2rad(deg) {
-    return deg * (Math.PI / 180);
+    return deg * Math.PI / 180;
   },
 
   getStation(station_id) {
@@ -66,10 +84,10 @@ const utilityFunctions = {
     let stations = this.getStationsInLine(to.line_no);
     let stationsBetween = stations.filter((stn) => {
       if (from.pos_in_line < to.pos_in_line) {
-        return (stn.pos_in_line > from.pos_in_line && stn.pos_in_line < to.pos_in_line)
+        return (stn.pos_in_line > from.pos_in_line && stn.pos_in_line <= to.pos_in_line)
       }
       else {
-        return (stn.pos_in_line < from.pos_in_line && stn.pos_in_line > to.pos_in_line)
+        return (stn.pos_in_line < from.pos_in_line && stn.pos_in_line >= to.pos_in_line)
       }
     });
     return stationsBetween;
@@ -78,17 +96,18 @@ const utilityFunctions = {
 
   //Return travel time in seconds between two given stations
   getTotalTravelTime(from, to) {
-    var dist = this.getDistanceInKm(
-      from.latitude,
-      from.longitude,
-      to.latitude,
-      to.longitude
-    );
+    // var dist = this.getDistanceInKm(
+    //   from.latitude,
+    //   from.longitude,
+    //   to.latitude,
+    //   to.longitude
+    // );
     var totalTime =
       (Properties.STATION_HALT_TIME + Properties.TIME_BETWEEN_STATIONS) *
       this.getStationsBetween(from, to).length +
-      Properties.TIME_BETWEEN_STATIONS / 2;
-    console.log(totalTime/60 + " m");
+      Properties.TIME_BETWEEN_STATIONS/2;
+    console.log(totalTime + " sec");
+    
     return totalTime;
   },
 
@@ -96,7 +115,7 @@ const utilityFunctions = {
     //Get array of stations in line
     let stations = this.getStationsBetween(from,to);
     stations.filter(station => JSON.stringify(station) === JSON.stringify(from) ).filter(station => JSON.stringify(station) === JSON.stringify(to));
-    let nextStation = this.getNearestStation([currentPostion.coords.longitude,currentPostion.coords.latitude], stations);
+    let nextStation = this.getNearestStation([currentPostion.coords.latitude,currentPostion.coords.longitude], stations);
     // console.log("The Dist : "+this.getDistanceInKm([currentPostion.coords.longitude,currentPostion.coords.latitude],nextStation.coordinates))
     return nextStation;
   },
