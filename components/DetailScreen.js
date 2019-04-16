@@ -136,16 +136,20 @@ export default class DetailScreen extends React.Component {
     });
   }
 
-  arrivalSetup(){
-    console.log("Destination!");      
+  arrivalSetup() {
+    console.log("Destination!");
+    AlarmNotification.cancelNotification();
     AlarmNotification.showAlarmNotification();
+    this.setState({
+      timeLeft: 0
+    })
     clearInterval(this.state.locTimer);
   }
 
   switchToNextStation(next) {
 
     if (next.name === this.state.destination.name) {
-     this.arrivalSetup();
+      this.arrivalSetup();
     }
     else {
       console.log("Switching");
@@ -223,7 +227,7 @@ class DetailComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentStation : props.current
+      currentStation: props.current
     }
   }
 
@@ -233,10 +237,10 @@ class DetailComponent extends React.Component {
     // console.log(this.props.current);
   }
 
-   render() {
+  render() {
     const origin = this.props.origin;
-    
-    const currName = this.props.current || {name :''};
+
+    const currName = this.props.current || { name: '' };
     const destination = this.props.dest;
     return (
       // <View style={{flex:1,justifyContent:"flex-start"}}>
@@ -257,21 +261,34 @@ class DetailComponent extends React.Component {
             borderColor: "#9EA3B0",
             borderWidth: 5,
             borderStyle: "solid",
-            flex: 1, justifyContent: "space-between",
+            flex: 1, alignItems: 'stretch',
             backgroundColor: '#0D1F2D'
           }}>
-            <View style={{ height: 50, flexDirection: "row" }}>
-              <DisplayField color="white" text={origin.name} fSize={15} />
-              <DisplayField
+            <View style={{ flex: 1, flexDirection: "row", alignItems: 'center', justifyContent: 'space-evenly' }}>
+              <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <DisplayField color="white" text={origin.code} fSize={30} style={{ flex: 1, alignItems: 'center' }} />
+                <DisplayField color="white" text={origin.name} fSize={12} style={{ flex: 1, alignItems: 'center' }} />
+                {/* <DisplayField
                 color="white"
-                text={" Via "+currName.name}
+                text={" Via "+currName.code}
                 fSize={15}
-              />
-              <DisplayField
-                color="white"
-                text={" To " + destination.name}
-                fSize={15}
-              />
+              /> */}
+              </View>
+              <DisplayField color="white" text={'TO'} fSize={15} style={{ flex: 1, alignItems: 'center' }} />
+              <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+                <DisplayField
+                  color="white"
+                  text={destination.code}
+                  fSize={30}
+                  style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
+                />
+                <DisplayField
+                  color="white"
+                  text={destination.name}
+                  fSize={10}
+                  style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}
+                />
+              </View>
             </View>
             <ProgressBarComponent color="green" progress={this.props.progressMade}></ProgressBarComponent>
           </View>
@@ -308,7 +325,7 @@ class DetailComponent extends React.Component {
             {/* <ProgressComponent color="blue" progress={80} /> */}
           </View>
         </View>
-      </View>
+      </View >
     );
   }
 }

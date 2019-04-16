@@ -147,21 +147,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="27.0.1"
-        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
-        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_18f205f63e7fc7b8488769979a11ce34a6b87845.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\android.arch.lifecycle\runtime\1.0.3\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="27.0.1"
         sha1="d7cc5473b9cf4ea159a263cd477fb3ecb2987b96">
         <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\android.arch.lifecycle-runtime-1.0.3_44ef3ff1fb82851427318d1ea93b393786007f96.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\exploded-aar\com.facebook.soloader\soloader\0.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="27.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="D:\Dev\Repos\React Laboratory\tmsN\android\app\build\intermediates\pre-dexed\debug\com.facebook.soloader-soloader-0.1.0_18f205f63e7fc7b8488769979a11ce34a6b87845.jar" />
     </item>
     <item
         is-multidex="false"

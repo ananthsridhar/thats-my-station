@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Chennai Beach",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 0,
     "latitude": 13.092253,
@@ -11,6 +12,7 @@
   {
     "id": 2,
     "name": "Chennai Beach",
+    "code":"MSB",
     "line_no": 2,
     "pos_in_line": 0,
     "latitude": 13.092253,
@@ -20,6 +22,7 @@
   {
     "id": 3,
     "name": "Chennai Fort",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 1,
     "latitude": 13.083172,
@@ -29,6 +32,7 @@
   {
     "id": 4,
     "name": "Chennai Fort",
+    "code":"MSB",
     "line_no": 2,
     "pos_in_line": 1,
     "latitude": 13.083172,
@@ -38,6 +42,7 @@
   {
     "id": 5,
     "name": "Park Town",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 2,
     "latitude": 13.079532,
@@ -47,6 +52,7 @@
   {
     "id": 6,
     "name": "Chintadripet",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 3,
     "latitude": 13.073828,
@@ -56,6 +62,7 @@
   {
     "id": 7,
     "name": "Chepauk",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 4,
     "latitude": 13.061907,
@@ -65,6 +72,7 @@
   {
     "id": 8,
     "name": "Triplicane",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 5,
     "latitude": 13.055248,
@@ -74,6 +82,7 @@
   {
     "id": 9,
     "name": "Lighthouse",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 6,
     "latitude": 13.045077,
@@ -84,6 +93,7 @@
   {
     "id": 10,
     "name": "MundakanniAmman Koil",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 7,
     "latitude": 13.040551,
@@ -94,6 +104,7 @@
   {
     "id": 11,
     "name": "Thirumylai",
+    "code":"MTMY",
     "line_no": 1,
     "pos_in_line": 8,
     "latitude": 13.03466,
@@ -104,6 +115,7 @@
   {
     "id": 12,
     "name": "Mandaveli",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 9,
     "latitude": 13.027317,
@@ -114,6 +126,7 @@
   {
     "id": 13,
     "name": "Greenways Road",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 10,
     "latitude": 13.020596,
@@ -123,6 +136,7 @@
   {
     "id": 14,
     "name": "Kotturpuram",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 11,
     "latitude": 13.013725,
@@ -133,6 +147,7 @@
   {
     "id": 15,
     "name": "Kasturbai Nagar",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 12,
     "latitude": 13.00548,
@@ -143,6 +158,7 @@
   {
     "id": 16,
     "name": "Indira Nagar",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 13,
     "latitude": 12.996353,
@@ -153,6 +169,7 @@
   {
     "id": 17,
     "name": "Thiruvanmiyur",
+    "code":"TYMR",
     "line_no": 1,
     "pos_in_line": 14,
     "latitude": 12.989427,
@@ -163,6 +180,7 @@
   {
     "id": 18,
     "name": "Taramani",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 15,
     "latitude": 12.978667,
@@ -173,6 +191,7 @@
   {
     "id": 19,
     "name": "Perungudi",
+    "code":"MSB",
     "line_no": 1,
     "pos_in_line": 16,
     "latitude": 12.975453,
@@ -183,6 +202,7 @@
   {
     "id": 20,
     "name": "Velachery",
+    "code":"VLCY",
     "line_no": 1,
     "pos_in_line": 17,
     "latitude": 12.967304,
