@@ -72,7 +72,7 @@ export default class FormComponent extends React.Component {
       if (this.state.fromStation === "") {
         Alert.alert(
           "Select From First",
-          "You have to first select the Origin before selecting Destination",
+          "You have to select the Origin before selecting Destination",
           [{ text: "Okay", onPress: () => console.log("PressedOkay") }]
         );
       } else {
