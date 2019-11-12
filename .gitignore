@@ -1,20 +1,3 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
-
-# expo
-.expo/
-
-# dependencies
-/node_modules
-
-# misc
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 # Xcode
 !**/*.xcodeproj
 !**/*.pbxproj
@@ -86,3 +69,27 @@ package-lock.json
 # ReactCommon subdir shouldn't have Xcode project
 /ReactCommon/**/*.xcodeproj
 RNTester/build
+
+# Libs that shouldn't have Xcode project
+/Libraries/FBLazyVector/**/*.xcodeproj
+/Libraries/FBReactNativeSpec/**/*.xcodeproj
+/Libraries/RCTRequired/**/*.xcodeproj
+/React/CoreModules/**/*.xcodeproj
+/packages/react-native-codegen/**/*.xcodeproj
+
+# CocoaPods
+/template/ios/Pods/
+/template/ios/Podfile.lock
+/RNTester/Gemfile.lock
+
+# Ignore RNTester specific Pods, but keep the __offline_mirrors__ here.
+RNTester/Pods/*
+!RNTester/Pods/__offline_mirrors
+
+# react-native-codegen
+/ReactCommon/fabric/components/rncore/
+/schema-rncore.json
+
+# Visual studio
+.vscode
+.vs
